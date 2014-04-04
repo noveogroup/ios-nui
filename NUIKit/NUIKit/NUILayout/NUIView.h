@@ -31,6 +31,13 @@
  */
 - (NUILayoutItem *)layoutItem;
 
+/*! Returns all associated layout items. */
+- (NSArray *)layoutItems;
+/*! Adds weak reference to layout item. */
+- (void)addLayoutItem:(NUILayoutItem *)layoutItem;
+/*! Removes reference to layout item. */
+- (void)removeLayoutItem:(NUILayoutItem *)layoutItem;
+
 /*! An equivalent of \b sizeThatFits:, but instead of the current size it returns \b CGSizeZero by
  *  default.
  */

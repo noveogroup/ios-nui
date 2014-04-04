@@ -23,4 +23,8 @@
 // preferredSizeThatFits: by default returns min size 
 - (CGSize)preferredSizeThatFits:(CGSize)size;
 
+// calls preferredSizeThatFits: with CGFLOAT_MAX as second parameter of size
+- (CGFloat)preferredHeightForWidth:(CGFloat)width;
+- (CGFloat)preferredWidthForHeight:(CGFloat)height;
+
 @end

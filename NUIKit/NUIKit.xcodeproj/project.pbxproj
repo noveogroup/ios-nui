@@ -80,6 +80,19 @@
 		BDCE268E15D38B9200560545 /* NUIStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = BDCE268C15D38B9200560545 /* NUIStatement.m */; };
 		BDDE2F8115DE5F7500A1145A /* UIColor+NUILoading.h in Headers */ = {isa = PBXBuildFile; fileRef = BDDE2F7F15DE5F7500A1145A /* UIColor+NUILoading.h */; };
 		BDDE2F8215DE5F7500A1145A /* UIColor+NUILoading.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDE2F8015DE5F7500A1145A /* UIColor+NUILoading.m */; };
+		BDFB31FE18D6F17B00656B79 /* NUIMath.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFB31FC18D6F17B00656B79 /* NUIMath.h */; };
+		BDFB31FF18D6F17B00656B79 /* NUIMath.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFB31FD18D6F17B00656B79 /* NUIMath.m */; };
+		BDFB320118D6F28500656B79 /* NUILayouts.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFB320018D6F28500656B79 /* NUILayouts.h */; };
+		BDFB320818D6F71800656B79 /* NUICellLayoutItem.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFB320218D6F71800656B79 /* NUICellLayoutItem.h */; };
+		BDFB320918D6F71800656B79 /* NUICellLayoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFB320318D6F71800656B79 /* NUICellLayoutItem.m */; };
+		BDFB320A18D6F71800656B79 /* NUIHorizontalCellLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFB320418D6F71800656B79 /* NUIHorizontalCellLayout.h */; };
+		BDFB320B18D6F71800656B79 /* NUIHorizontalCellLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFB320518D6F71800656B79 /* NUIHorizontalCellLayout.m */; };
+		BDFB320C18D6F71800656B79 /* NUIVerticalCellLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFB320618D6F71800656B79 /* NUIVerticalCellLayout.h */; };
+		BDFB320D18D6F71800656B79 /* NUIVerticalCellLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFB320718D6F71800656B79 /* NUIVerticalCellLayout.m */; };
+		BDFB321218D6F7DF00656B79 /* NUIHorizontalCellLayout+NUILoading.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFB320E18D6F7DF00656B79 /* NUIHorizontalCellLayout+NUILoading.h */; };
+		BDFB321318D6F7DF00656B79 /* NUIHorizontalCellLayout+NUILoading.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFB320F18D6F7DF00656B79 /* NUIHorizontalCellLayout+NUILoading.m */; };
+		BDFB321418D6F7DF00656B79 /* NUIVerticalCellLayout+NUILoading.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFB321018D6F7DF00656B79 /* NUIVerticalCellLayout+NUILoading.h */; };
+		BDFB321518D6F7DF00656B79 /* NUIVerticalCellLayout+NUILoading.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFB321118D6F7DF00656B79 /* NUIVerticalCellLayout+NUILoading.m */; };
 		CD6B002AA96E979DEE425C7C /* NUIStatement+Object.h in Headers */ = {isa = PBXBuildFile; fileRef = CD6B06D13A73F84AB86BDAFE /* NUIStatement+Object.h */; };
 		CD6B01AFE8AC9A1FCA2B2D8B /* NUIStatement+BinaryOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6B07F6D926B8DE73B9535D /* NUIStatement+BinaryOperator.m */; };
 		CD6B02C3A258704F473627CD /* NUIStatement+Object.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6B0E50D22C34F07217659C /* NUIStatement+Object.m */; };
@@ -164,6 +177,19 @@
 		BDCE268C15D38B9200560545 /* NUIStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIStatement.m; sourceTree = "<group>"; };
 		BDDE2F7F15DE5F7500A1145A /* UIColor+NUILoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+NUILoading.h"; sourceTree = "<group>"; };
 		BDDE2F8015DE5F7500A1145A /* UIColor+NUILoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+NUILoading.m"; sourceTree = "<group>"; };
+		BDFB31FC18D6F17B00656B79 /* NUIMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIMath.h; sourceTree = "<group>"; };
+		BDFB31FD18D6F17B00656B79 /* NUIMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIMath.m; sourceTree = "<group>"; };
+		BDFB320018D6F28500656B79 /* NUILayouts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUILayouts.h; sourceTree = "<group>"; };
+		BDFB320218D6F71800656B79 /* NUICellLayoutItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUICellLayoutItem.h; sourceTree = "<group>"; };
+		BDFB320318D6F71800656B79 /* NUICellLayoutItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUICellLayoutItem.m; sourceTree = "<group>"; };
+		BDFB320418D6F71800656B79 /* NUIHorizontalCellLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIHorizontalCellLayout.h; sourceTree = "<group>"; };
+		BDFB320518D6F71800656B79 /* NUIHorizontalCellLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIHorizontalCellLayout.m; sourceTree = "<group>"; };
+		BDFB320618D6F71800656B79 /* NUIVerticalCellLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIVerticalCellLayout.h; sourceTree = "<group>"; };
+		BDFB320718D6F71800656B79 /* NUIVerticalCellLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIVerticalCellLayout.m; sourceTree = "<group>"; };
+		BDFB320E18D6F7DF00656B79 /* NUIHorizontalCellLayout+NUILoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NUIHorizontalCellLayout+NUILoading.h"; sourceTree = "<group>"; };
+		BDFB320F18D6F7DF00656B79 /* NUIHorizontalCellLayout+NUILoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NUIHorizontalCellLayout+NUILoading.m"; sourceTree = "<group>"; };
+		BDFB321018D6F7DF00656B79 /* NUIVerticalCellLayout+NUILoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NUIVerticalCellLayout+NUILoading.h"; sourceTree = "<group>"; };
+		BDFB321118D6F7DF00656B79 /* NUIVerticalCellLayout+NUILoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NUIVerticalCellLayout+NUILoading.m"; sourceTree = "<group>"; };
 		CD6B06D13A73F84AB86BDAFE /* NUIStatement+Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NUIStatement+Object.h"; sourceTree = "<group>"; };
 		CD6B07F6D926B8DE73B9535D /* NUIStatement+BinaryOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NUIStatement+BinaryOperator.m"; sourceTree = "<group>"; };
 		CD6B0C6EBF5DCA28874EE478 /* NUIStatement+BinaryOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NUIStatement+BinaryOperator.h"; sourceTree = "<group>"; };
@@ -224,12 +250,8 @@
 		BD15055F15CF96EE0096EB13 /* NUILayout */ = {
 			isa = PBXGroup;
 			children = (
-				2CE05D6C1604D4740079A621 /* UIButton+NUILayout.h */,
-				2CE05D6D1604D4740079A621 /* UIButton+NUILayout.m */,
-				2CE05D6E1604D4740079A621 /* UITableView+NUILayout.h */,
-				2CE05D6F1604D4740079A621 /* UITableView+NUILayout.m */,
-				31821F5CB85004435C71B8D0 /* NUIView.h */,
-				2CE86F7F15DAB63A00F98E43 /* README.md */,
+				BDFB320218D6F71800656B79 /* NUICellLayoutItem.h */,
+				BDFB320318D6F71800656B79 /* NUICellLayoutItem.m */,
 				BD15056015CF96EE0096EB13 /* NUIFlowLayout.h */,
 				BD15056115CF96EE0096EB13 /* NUIFlowLayout.m */,
 				BD15056215CF96EE0096EB13 /* NUIGridLayout.h */,
@@ -238,6 +260,8 @@
 				BD15056515CF96EE0096EB13 /* NUIGridLayoutItem.m */,
 				BD15056615CF96EE0096EB13 /* NUIGridLength.h */,
 				BD15056715CF96EE0096EB13 /* NUIGridLength.m */,
+				BDFB320418D6F71800656B79 /* NUIHorizontalCellLayout.h */,
+				BDFB320518D6F71800656B79 /* NUIHorizontalCellLayout.m */,
 				BD15056815CF96EE0096EB13 /* NUIHorizontalLayout.h */,
 				BD15056915CF96EE0096EB13 /* NUIHorizontalLayout.m */,
 				BD15056A15CF96EE0096EB13 /* NUILabel.h */,
@@ -248,14 +272,25 @@
 				BD15056F15CF96EE0096EB13 /* NUILayoutAnimation.m */,
 				BD15057015CF96EE0096EB13 /* NUILayoutItem.h */,
 				BD15057115CF96EE0096EB13 /* NUILayoutItem.m */,
+				BDFB320018D6F28500656B79 /* NUILayouts.h */,
 				BD15057215CF96EE0096EB13 /* NUILayoutView.h */,
 				BD15057315CF96EE0096EB13 /* NUILayoutView.m */,
+				BDFB31FC18D6F17B00656B79 /* NUIMath.h */,
+				BDFB31FD18D6F17B00656B79 /* NUIMath.m */,
 				BD15057415CF96EE0096EB13 /* NUIScrollView.h */,
 				BD15057515CF96EE0096EB13 /* NUIScrollView.m */,
 				BD15057615CF96EE0096EB13 /* NUISimpleLayout.h */,
 				BD15057715CF96EE0096EB13 /* NUISimpleLayout.m */,
+				BDFB320618D6F71800656B79 /* NUIVerticalCellLayout.h */,
+				BDFB320718D6F71800656B79 /* NUIVerticalCellLayout.m */,
 				BD15057815CF96EE0096EB13 /* NUIVerticalLayout.h */,
 				BD15057915CF96EE0096EB13 /* NUIVerticalLayout.m */,
+				31821F5CB85004435C71B8D0 /* NUIView.h */,
+				2CE86F7F15DAB63A00F98E43 /* README.md */,
+				2CE05D6C1604D4740079A621 /* UIButton+NUILayout.h */,
+				2CE05D6D1604D4740079A621 /* UIButton+NUILayout.m */,
+				2CE05D6E1604D4740079A621 /* UITableView+NUILayout.h */,
+				2CE05D6F1604D4740079A621 /* UITableView+NUILayout.m */,
 				BD15057A15CF96EE0096EB13 /* UIView+NUILayout.h */,
 				BD15057B15CF96EE0096EB13 /* UIView+NUILayout.m */,
 			);
@@ -267,10 +302,14 @@
 			children = (
 				BD15057D15CF96EE0096EB13 /* NUIGridLayout+NUILoading.h */,
 				BD15057E15CF96EE0096EB13 /* NUIGridLayout+NUILoading.m */,
+				BDFB320E18D6F7DF00656B79 /* NUIHorizontalCellLayout+NUILoading.h */,
+				BDFB320F18D6F7DF00656B79 /* NUIHorizontalCellLayout+NUILoading.m */,
 				BD15057F15CF96EE0096EB13 /* NUILayout+NUILoading.h */,
 				BD15058015CF96EE0096EB13 /* NUILayout+NUILoading.m */,
 				BD15058115CF96EE0096EB13 /* NUILayoutItem+NUILoading.h */,
 				BD15058215CF96EE0096EB13 /* NUILayoutItem+NUILoading.m */,
+				BDFB321018D6F7DF00656B79 /* NUIVerticalCellLayout+NUILoading.h */,
+				BDFB321118D6F7DF00656B79 /* NUIVerticalCellLayout+NUILoading.m */,
 			);
 			path = NUILayoutLoading;
 			sourceTree = "<group>";
@@ -278,22 +317,22 @@
 		BD15058315CF96EE0096EB13 /* NUILoader */ = {
 			isa = PBXGroup;
 			children = (
-				2CE86F8115DAB64400F98E43 /* README.md */,
+				BD15058415CF96EE0096EB13 /* Categories */,
+				BD15059915CF96EE0096EB13 /* NUIAnalyzer.h */,
+				BD15059A15CF96EE0096EB13 /* NUIAnalyzer.m */,
 				31821F228888E8398B1803C0 /* NUIData.h */,
 				31821F30DD9C8880BB448E2D /* NUIData.m */,
+				2C133B1615D93A4100480DDD /* NUIError.h */,
+				2C133B1715D93A4100480DDD /* NUIError.m */,
+				BD15059F15CF96EE0096EB13 /* NUILoader.h */,
+				BD1505A015CF96EE0096EB13 /* NUILoader.m */,
 				CD6B0C6EBF5DCA28874EE478 /* NUIStatement+BinaryOperator.h */,
 				CD6B07F6D926B8DE73B9535D /* NUIStatement+BinaryOperator.m */,
 				CD6B06D13A73F84AB86BDAFE /* NUIStatement+Object.h */,
 				CD6B0E50D22C34F07217659C /* NUIStatement+Object.m */,
-				BD15058415CF96EE0096EB13 /* Categories */,
-				BD15059915CF96EE0096EB13 /* NUIAnalyzer.h */,
-				BD15059A15CF96EE0096EB13 /* NUIAnalyzer.m */,
-				BD15059F15CF96EE0096EB13 /* NUILoader.h */,
-				BD1505A015CF96EE0096EB13 /* NUILoader.m */,
 				BDCE268B15D38B9200560545 /* NUIStatement.h */,
 				BDCE268C15D38B9200560545 /* NUIStatement.m */,
-				2C133B1615D93A4100480DDD /* NUIError.h */,
-				2C133B1715D93A4100480DDD /* NUIError.m */,
+				2CE86F8115DAB64400F98E43 /* README.md */,
 			);
 			path = NUILoader;
 			sourceTree = "<group>";
@@ -301,14 +340,14 @@
 		BD15058415CF96EE0096EB13 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				BDDE2F7F15DE5F7500A1145A /* UIColor+NUILoading.h */,
-				BDDE2F8015DE5F7500A1145A /* UIColor+NUILoading.m */,
 				BD15058515CF96EE0096EB13 /* NUILoader+ObjectsLoading.h */,
 				BD15058615CF96EE0096EB13 /* NUILoader+ObjectsLoading.m */,
 				BD15058715CF96EE0096EB13 /* NUILoader+StructuresLoading.h */,
 				BD15058815CF96EE0096EB13 /* NUILoader+StructuresLoading.m */,
 				BD15058915CF96EE0096EB13 /* UIButton+NUILoading.h */,
 				BD15058A15CF96EE0096EB13 /* UIButton+NUILoading.m */,
+				BDDE2F7F15DE5F7500A1145A /* UIColor+NUILoading.h */,
+				BDDE2F8015DE5F7500A1145A /* UIColor+NUILoading.m */,
 				BD15058B15CF96EE0096EB13 /* UIControl+NUILoading.h */,
 				BD15058C15CF96EE0096EB13 /* UIControl+NUILoading.m */,
 				BD15058D15CF96EE0096EB13 /* UIFont+NUILoading.h */,
@@ -348,12 +387,16 @@
 				BD1505CC15CF97D50096EB13 /* NUIHorizontalLayout.h in Headers */,
 				BD1505CD15CF97D50096EB13 /* NUILabel.h in Headers */,
 				BD1505CE15CF97D50096EB13 /* NUILayout.h in Headers */,
+				BDFB320118D6F28500656B79 /* NUILayouts.h in Headers */,
 				BD1505CF15CF97D50096EB13 /* NUILayoutAnimation.h in Headers */,
+				BDFB321418D6F7DF00656B79 /* NUIVerticalCellLayout+NUILoading.h in Headers */,
+				BDFB31FE18D6F17B00656B79 /* NUIMath.h in Headers */,
 				BD1505D015CF97D50096EB13 /* NUILayoutItem.h in Headers */,
 				BD1505D115CF97D50096EB13 /* NUILayoutView.h in Headers */,
 				BD1505D215CF97D60096EB13 /* NUIScrollView.h in Headers */,
 				BD1505D315CF97D60096EB13 /* NUISimpleLayout.h in Headers */,
 				BD1505D415CF97D60096EB13 /* NUIVerticalLayout.h in Headers */,
+				BDFB320818D6F71800656B79 /* NUICellLayoutItem.h in Headers */,
 				BD1505D515CF97D60096EB13 /* UIView+NUILayout.h in Headers */,
 				BD1505D615CF97D60096EB13 /* NUIGridLayout+NUILoading.h in Headers */,
 				BD1505D715CF97D60096EB13 /* NUILayout+NUILoading.h in Headers */,
@@ -361,8 +404,10 @@
 				BD1505D915CF97D60096EB13 /* NUILoader+ObjectsLoading.h in Headers */,
 				BD1505DA15CF97D60096EB13 /* NUILoader+StructuresLoading.h in Headers */,
 				BD1505DB15CF97D60096EB13 /* UIButton+NUILoading.h in Headers */,
+				BDFB321218D6F7DF00656B79 /* NUIHorizontalCellLayout+NUILoading.h in Headers */,
 				BD1505DC15CF97D60096EB13 /* UIControl+NUILoading.h in Headers */,
 				BD1505DD15CF97D60096EB13 /* UIFont+NUILoading.h in Headers */,
+				BDFB320A18D6F71800656B79 /* NUIHorizontalCellLayout.h in Headers */,
 				BD1505DE15CF97D60096EB13 /* UIImage+NUILoading.h in Headers */,
 				BD1505DF15CF97D60096EB13 /* UILabel+NUILoading.h in Headers */,
 				BD1505E115CF97D60096EB13 /* UITextField+NUILoading.h in Headers */,
@@ -373,6 +418,7 @@
 				BDCE268D15D38B9200560545 /* NUIStatement.h in Headers */,
 				2C133B1815D93A4200480DDD /* NUIError.h in Headers */,
 				CD6B002AA96E979DEE425C7C /* NUIStatement+Object.h in Headers */,
+				BDFB320C18D6F71800656B79 /* NUIVerticalCellLayout.h in Headers */,
 				CD6B0ADA3B4C772DD7F06F48 /* NUIStatement+BinaryOperator.h in Headers */,
 				318212D2D26421F06E86C561 /* NUIData.h in Headers */,
 				318216A3274E7B84F1D29C0C /* NUIView.h in Headers */,
@@ -408,7 +454,7 @@
 		BD15054215CF954C0096EB13 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Ivan Masalov";
 			};
 			buildConfigurationList = BD15054515CF954C0096EB13 /* Build configuration list for PBXProject "NUIKit" */;
@@ -433,12 +479,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDFB320B18D6F71800656B79 /* NUIHorizontalCellLayout.m in Sources */,
 				BD1505A615CF96EE0096EB13 /* NUIFlowLayout.m in Sources */,
 				BD1505A715CF96EE0096EB13 /* NUIGridLayout.m in Sources */,
 				BD1505A815CF96EE0096EB13 /* NUIGridLayoutItem.m in Sources */,
 				BD1505A915CF96EE0096EB13 /* NUIGridLength.m in Sources */,
 				BD1505AA15CF96EE0096EB13 /* NUIHorizontalLayout.m in Sources */,
 				BD1505AB15CF96EE0096EB13 /* NUILabel.m in Sources */,
+				BDFB320918D6F71800656B79 /* NUICellLayoutItem.m in Sources */,
+				BDFB320D18D6F71800656B79 /* NUIVerticalCellLayout.m in Sources */,
+				BDFB31FF18D6F17B00656B79 /* NUIMath.m in Sources */,
 				BD1505AC15CF96EE0096EB13 /* NUILayout.m in Sources */,
 				BD1505AD15CF96EE0096EB13 /* NUILayoutAnimation.m in Sources */,
 				BD1505AE15CF96EE0096EB13 /* NUILayoutItem.m in Sources */,
@@ -455,6 +505,7 @@
 				BD1505B915CF96EE0096EB13 /* UIButton+NUILoading.m in Sources */,
 				BD1505BA15CF96EE0096EB13 /* UIControl+NUILoading.m in Sources */,
 				BD1505BB15CF96EE0096EB13 /* UIFont+NUILoading.m in Sources */,
+				BDFB321318D6F7DF00656B79 /* NUIHorizontalCellLayout+NUILoading.m in Sources */,
 				BD1505BC15CF96EE0096EB13 /* UIImage+NUILoading.m in Sources */,
 				BD1505BD15CF96EE0096EB13 /* UILabel+NUILoading.m in Sources */,
 				BD1505BF15CF96EE0096EB13 /* UITextField+NUILoading.m in Sources */,
@@ -463,6 +514,7 @@
 				BD1505C415CF96EE0096EB13 /* NUILoader.m in Sources */,
 				BD1505C615CF96EE0096EB13 /* nui_utils.m in Sources */,
 				BDCE268E15D38B9200560545 /* NUIStatement.m in Sources */,
+				BDFB321518D6F7DF00656B79 /* NUIVerticalCellLayout+NUILoading.m in Sources */,
 				2C133B1915D93A4200480DDD /* NUIError.m in Sources */,
 				CD6B02C3A258704F473627CD /* NUIStatement+Object.m in Sources */,
 				CD6B01AFE8AC9A1FCA2B2D8B /* NUIStatement+BinaryOperator.m in Sources */,
@@ -480,8 +532,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -493,10 +549,14 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -505,16 +565,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

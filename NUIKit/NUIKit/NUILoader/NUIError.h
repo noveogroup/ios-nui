@@ -14,13 +14,13 @@
 @interface NUIError : NSObject
 
 @property (nonatomic, strong) NUIData *data;
-@property (nonatomic, unsafe_unretained) int position;
+@property (nonatomic, unsafe_unretained) NSUInteger position;
 @property (nonatomic, copy) NSString *message;
 
-- (id)initWithData:(NUIData *)data position:(int)position message:(NSString *)message;
+- (id)initWithData:(NUIData *)data position:(NSUInteger)position message:(NSString *)message;
 - (id)initWithStatement:(NUIStatement *)statement message:(NSString *)message;
 
-+ (id)errorWithData:(NUIData *)data position:(int)position message:(NSString *)message;
++ (id)errorWithData:(NUIData *)data position:(NSUInteger)position message:(NSString *)message;
 + (id)errorWithStatement:(NUIStatement *)statement message:(NSString *)message;
 
 @end

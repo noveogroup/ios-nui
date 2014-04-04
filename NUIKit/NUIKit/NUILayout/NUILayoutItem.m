@@ -10,6 +10,8 @@
 #import "NUILayout.h"
 #import "NUIView.h"
 
+#import "NUIMath.h"
+
 static int ObserverContext;
 
 @interface NUILayoutItem ()
@@ -59,6 +61,14 @@ static int ObserverContext;
 - (void)dealloc
 {
     [self removeObserver:self forKeyPath:@"view.needsToUpdateSize"];
+    [self.view removeLayoutItem:self];
+}
+
+- (void)setView:(id<NUIView>)view
+{
+    [view_ removeLayoutItem:self];
+    view_ = view;
+    [view_ addLayoutItem:self];
 }
 
 - (void)setMargin:(UIEdgeInsets)margin
@@ -222,7 +232,7 @@ static int ObserverContext;
         return CGSizeZero;
     }
     UIEdgeInsets margin = self.margin;
-    
+
     if (self.isFixedWidthSet && self.isFixedHeightSet) {
         return CGSizeMake(self.fixedWidth + margin.left + margin.right,
                           self.fixedHeight + margin.top + margin.bottom);
@@ -262,7 +272,7 @@ static int ObserverContext;
     }
     size.width -= margin_.left + margin_.right;
     size.height -= margin_.top + margin_.bottom;
-    
+
     if (self.horizontalAlignment == NUIHorizontalAlignment_Stretch) {
         size.width = [self constraintWidth:rect.size.width];
     }
@@ -280,7 +290,7 @@ static int ObserverContext;
         case NUIHorizontalAlignment_Stretch:
             size.width = [self constraintWidth:rect.size.width];
         default:
-            x = floorf(rect.origin.x + (rect.size.width - size.width) / 2);
+            x = nuiScaledFloorf(rect.origin.x + (rect.size.width - size.width) / 2);
             break;
     }
     CGFloat y = 0;
@@ -294,7 +304,7 @@ static int ObserverContext;
         case NUIVerticalAlignment_Stretch:
             size.height = [self constraintHeight:rect.size.height];
         default:
-            y = floorf(rect.origin.y + (rect.size.height - size.height) / 2);
+            y = nuiScaledFloorf(rect.origin.y + (rect.size.height - size.height) / 2);
             break;
     }
     [view_ setFrame:CGRectMake(x, y, size.width, size.height)];

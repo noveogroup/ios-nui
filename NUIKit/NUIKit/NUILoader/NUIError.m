@@ -17,7 +17,7 @@
 @synthesize position = position_;
 @synthesize message = message_;
 
-- (id)initWithData:(NUIData *)data position:(int)position message:(NSString *)message
+- (id)initWithData:(NUIData *)data position:(NSUInteger)position message:(NSString *)message
 {
     self = [super init];
     if (self) {
@@ -33,7 +33,7 @@
     return [self initWithData:statement.data position:statement.range.location message:message];
 }
 
-+ (id)errorWithData:(NUIData *)data position:(int)position message:(NSString *)message
++ (id)errorWithData:(NUIData *)data position:(NSUInteger)position message:(NSString *)message
 {
     return [[NUIError alloc] initWithData:data position:position message:message];
 }

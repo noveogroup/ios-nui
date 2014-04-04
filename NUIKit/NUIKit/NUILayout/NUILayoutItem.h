@@ -61,6 +61,10 @@ typedef enum {
 /*! Use it instead of view \b hidden property. */
 @property (nonatomic, unsafe_unretained) NUIVisibility visibility;
 
+/*! An object that should help to distinct one layout item from another when
+ *  debugging. */
+@property (nonatomic, strong) id tag;
+
 /*! Constraining by min and max widths. */
 - (CGFloat)constraintWidth:(CGFloat)width;
 /*! Constraining by min and max heights. */
@@ -68,7 +72,7 @@ typedef enum {
 /*! Constraining by min and max sizes. */
 - (CGSize)constraintSize:(CGSize)size;
 
-/*! Returns constained size returned by \b preferredSizeThatFits:. Performs caching.*/
+/*! Returns constrained size returned by \b preferredSizeThatFits:. Performs caching.*/
 - (CGSize)sizeWithMarginThatFits:(CGSize)size;
 
 /*! Sets view frame taking in respect view alignment. */

@@ -39,6 +39,36 @@
     return autocorrectionTypeConstants;
 }
 
++ (NSDictionary *)nuiConstantsForBorderStyle
+{
+    static NSDictionary *borderStyleConstants = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        borderStyleConstants = [[NSDictionary alloc] initWithObjectsAndKeys:
+           [NSNumber numberWithInt:UITextBorderStyleNone], @"None",
+           [NSNumber numberWithInt:UITextBorderStyleLine], @"Line",
+           [NSNumber numberWithInt:UITextBorderStyleBezel], @"Bezel",
+           [NSNumber numberWithInt:UITextBorderStyleRoundedRect], @"RoundedRect",
+           nil];
+    });
+    return borderStyleConstants;
+}
+
++ (NSDictionary *)nuiConstantsForClearButtonMode
+{
+    static NSDictionary *clearButtonModeConstants = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        clearButtonModeConstants = [[NSDictionary alloc] initWithObjectsAndKeys:
+            [NSNumber numberWithInt:UITextFieldViewModeNever], @"Never",
+            [NSNumber numberWithInt:UITextFieldViewModeWhileEditing], @"WhileEditing",
+            [NSNumber numberWithInt:UITextFieldViewModeUnlessEditing], @"UnlessEditing",
+            [NSNumber numberWithInt:UITextFieldViewModeAlways], @"Always",
+            nil];
+    });
+    return clearButtonModeConstants;
+}
+
 + (NSDictionary *)nuiConstantsForKeyboardType
 {
     static NSDictionary *keyboardTypeConstants = nil;

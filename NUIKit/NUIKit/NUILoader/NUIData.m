@@ -13,7 +13,7 @@
 @synthesize fileName = fileName_;
 @synthesize data = data_;
 
-- (NUIPositionInLine)positionInLineFromPosition:(int)position
+- (NUIPositionInLine)positionInLineFromPosition:(NSUInteger)position
 {
     NUIPositionInLine result = {0, position};
     NSRange range = [data_ rangeOfString:@"\n" options:NSBackwardsSearch range:NSMakeRange(0,

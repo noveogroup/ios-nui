@@ -11,13 +11,13 @@
 /*! A layout item used by \b NUIGridLayout. */
 @interface NUIGridLayoutItem : NUILayoutItem
 
-/*! A range of columns. Default value is [0, 1]. */
+/*! A range of columns taken by view. Default value is [0, 1]. */
 @property (nonatomic, unsafe_unretained) NSRange columnRange;
-/*! A range of rows. Default value is [0, 1]. */
+/*! A range of rows taken by view. Default value is [0, 1]. */
 @property (nonatomic, unsafe_unretained) NSRange rowRange;
-/*! A column number. Default value is 0. */
-@property (nonatomic, unsafe_unretained) int column;
-/*! A row number. Default value is 0. */
-@property (nonatomic, unsafe_unretained) int row;
+/*! A first column number taken by view. Default value is 0. */
+@property (nonatomic, unsafe_unretained) NSUInteger column;
+/*! A first row number taken by view. Default value is 0. */
+@property (nonatomic, unsafe_unretained) NSUInteger row;
 
 @end

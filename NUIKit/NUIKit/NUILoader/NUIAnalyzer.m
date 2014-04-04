@@ -20,7 +20,7 @@ static NSString *Punctuation = @";,";
     NSCharacterSet *punctuation_;
 
     NUIData *data_;
-    int position_;
+    NSUInteger position_;
     NSMutableArray *imports_;
     NSMutableDictionary *constants_;
     NSMutableDictionary *styles_;
@@ -68,7 +68,7 @@ static NSString *Punctuation = @";,";
         if (![self skipSpacesAndPunctuation:&position_]) {
             return YES;
         }
-        int startPos = position_;
+        NSUInteger startPos = position_;
         NUIStatement *identifier = [self loadIdentifier:&startPos];
         if (!identifier) {
             return YES;
@@ -162,7 +162,7 @@ static NSString *Punctuation = @";,";
     }
 }
 
-- (BOOL)skipSpaces:(int *)position
+- (BOOL)skipSpaces:(NSUInteger *)position
 {
     while (data_.data.length > position_) {
         unichar c = [data_.data characterAtIndex:*position];
@@ -174,7 +174,7 @@ static NSString *Punctuation = @";,";
     return *position != data_.data.length;
 }
 
-- (BOOL)skipSpacesAndPunctuation:(int *)position
+- (BOOL)skipSpacesAndPunctuation:(NSUInteger *)position
 {
     while (data_.data.length > position_) {
         unichar c = [data_.data characterAtIndex:*position];
@@ -187,7 +187,7 @@ static NSString *Punctuation = @";,";
     return *position != data_.data.length;
 }
 
-- (NUIStatement *)loadSimpleIdentifier:(int *)position
+- (NUIStatement *)loadSimpleIdentifier:(NSUInteger *)position
 {
     static NSRegularExpression *simpleIdentifierRegEx = nil;
     static dispatch_once_t onceToken;
@@ -209,7 +209,7 @@ static NSString *Punctuation = @";,";
     return statement;
 }
 
-- (NUIStatement *)loadIdentifier:(int *)position
+- (NUIStatement *)loadIdentifier:(NSUInteger *)position
 {
     static NSRegularExpression *identifierRegEx = nil;
     static dispatch_once_t onceToken;
@@ -231,7 +231,7 @@ static NSString *Punctuation = @";,";
     return statement;
 }
 
-- (NUIStatement *)loadSystemIdentifier:(int *)position
+- (NUIStatement *)loadSystemIdentifier:(NSUInteger *)position
 {
     static NSRegularExpression *systemIdentifierRegEx = nil;
     static dispatch_once_t onceToken;
@@ -253,9 +253,9 @@ static NSString *Punctuation = @";,";
     return statement;
 }
 
-- (NUIStatement *)loadString:(int *)position
+- (NUIStatement *)loadString:(NSUInteger *)position
 {
-    int pos = *position;
+    NSUInteger pos = *position;
     if ([data_.data characterAtIndex:pos] != '\"') {
         return nil;
     }
@@ -286,9 +286,9 @@ static NSString *Punctuation = @";,";
     }
 }
 
-- (NUIStatement *)loadSystemProperties:(int *)position
+- (NUIStatement *)loadSystemProperties:(NSUInteger *)position
 {
-    int pos = *position;
+    NSUInteger pos = *position;
     NSMutableDictionary *properties = [NSMutableDictionary dictionary];
     while (YES) {
         if (![self skipSpacesAndPunctuation:&pos]) {
@@ -330,9 +330,9 @@ static NSString *Punctuation = @";,";
     return statement;
 }
 
-- (NUIStatement *)loadProperties:(int *)position
+- (NUIStatement *)loadProperties:(NSUInteger *)position
 {
-    int pos = *position;
+    NSUInteger pos = *position;
     NSMutableArray *properties = [NSMutableArray array];
     while (YES) {
         if (![self skipSpacesAndPunctuation:&pos]) {
@@ -355,9 +355,9 @@ static NSString *Punctuation = @";,";
     return statement;
 }
 
-- (NUIStatement *)loadObject:(int *)position
+- (NUIStatement *)loadObject:(NSUInteger *)position
 {
-    int pos = *position;
+    NSUInteger pos = *position;
     NSString *op = @"{";
     if ([data_.data compare:op options:0 range:(NSRange){pos, op.length}] != NSOrderedSame) {
         return nil;
@@ -387,9 +387,9 @@ static NSString *Punctuation = @";,";
     return statement;
 }
 
-- (NUIStatement *)loadArray:(int *)position
+- (NUIStatement *)loadArray:(NSUInteger *)position
 {
-    int pos = *position;
+    NSUInteger pos = *position;
     NSString *op = @"[";
     if (![data_.data compare:op options:0 range:(NSRange){pos, op.length}] == NSOrderedSame) {
         return nil;
@@ -420,9 +420,9 @@ static NSString *Punctuation = @";,";
     }
 }
 
-- (NUIStatement *)loadAssignment:(int *)position
+- (NUIStatement *)loadAssignment:(NSUInteger *)position
 {
-    int pos = *position;
+    NSUInteger pos = *position;
     NUIStatement *lvalue = [self loadIdentifier:&pos];
     if (!lvalue) {
         return nil;
@@ -484,9 +484,9 @@ static NSString *Punctuation = @";,";
 }
 
 - (NUIStatement *)loadBinaryOperator:(NSString *)op lvalueLoader:(SEL)lvalueLoader
-    rvalueLoader:(SEL)rvalueLoader position:(int *)position
+    rvalueLoader:(SEL)rvalueLoader position:(NSUInteger *)position
 {
-    int pos = *position;
+    NSUInteger pos = *position;
     id lvalue = objc_msgSend(self, lvalueLoader, &pos);
     if (!lvalue) {
         return nil;
@@ -522,7 +522,7 @@ static NSString *Punctuation = @";,";
     return statement;
 }
 
-- (NUIStatement *)loadNumericOperator:(int *)position lvalue:(id)lvalue
+- (NUIStatement *)loadNumericOperator:(NSUInteger *)position lvalue:(id)lvalue
 {
     static NSDictionary *numericOperators = nil;
     static dispatch_once_t onceToken;
@@ -533,7 +533,7 @@ static NSString *Punctuation = @";,";
     });
 
 
-    int pos  = *position;
+    NSUInteger pos  = *position;
     for (NSString *value in numericOperators) {
         if ([data_.data compare:value options:0 range:(NSRange){pos, value.length}]
             == NSOrderedSame) {
@@ -557,9 +557,9 @@ static NSString *Punctuation = @";,";
     return nil;
 }
 
-- (id)loadExpression:(int *)position
+- (id)loadExpression:(NSUInteger *)position
 {
-    int pos = *position;
+    NSUInteger pos = *position;
     id res = [self loadNumber:&pos];
     if (!res) {
         res = [self loadIdentifier:&pos];
@@ -576,9 +576,9 @@ static NSString *Punctuation = @";,";
     return res;
 } 
 
-- (id)loadRValue:(int *)position
+- (id)loadRValue:(NSUInteger *)position
 {
-    int pos = *position;
+    NSUInteger pos = *position;
     id res = [self loadString:&pos];
     if (!res) {
         res = [self loadObject:&pos];
@@ -603,7 +603,7 @@ static NSString *Punctuation = @";,";
     return res;
 }
 
-- (NUIStatement *)loadNumber:(int *)position
+- (NUIStatement *)loadNumber:(NSUInteger *)position
 {
     static NSRegularExpression *numberRegEx = nil;
     static dispatch_once_t onceToken;

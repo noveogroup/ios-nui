@@ -17,19 +17,25 @@
     self.needsToUpdateSize = YES;
 }
 
+- (void)setAttributedText:(NSAttributedString *)attributedText
+{
+    [super setAttributedText:attributedText];
+    self.needsToUpdateSize = YES;
+}
+
 - (void)setFont:(UIFont *)font
 {
     [super setFont:font];
     self.needsToUpdateSize = YES;
 }
 
-- (void)setTextAlignment:(UITextAlignment)textAlignment
+- (void)setTextAlignment:(NSTextAlignment)textAlignment
 {
     [super setTextAlignment:textAlignment];
     self.needsToUpdateSize = YES;
 }
 
-- (void)setLineBreakMode:(UILineBreakMode)lineBreakMode
+- (void)setLineBreakMode:(NSLineBreakMode)lineBreakMode
 {
     [super setLineBreakMode:lineBreakMode];
     self.needsToUpdateSize = YES;

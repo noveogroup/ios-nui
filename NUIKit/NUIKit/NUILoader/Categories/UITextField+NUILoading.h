@@ -26,6 +26,20 @@
  *  * \b Default for \b UITextAutocorrectionTypeDefault.
  */
 + (NSDictionary *)nuiConstantsForAutocorrectionType;
+/*! Allows to load \b borderStyle property using following values:
+ *  * \b None for \b UITextBorderStyleNone.
+ *  * \b Line for \b UITextBorderStyleLine.
+ *  * \b Bezel for \b UITextBorderStyleBezel.
+ *  * \b RoundedRect for \b UITextBorderStyleRoundedRect.
+ */
++ (NSDictionary *)nuiConstantsForBorderStyle;
+/*! Allows to load \b clearButtonMode property using following values:
+ *  * \b Never for \b UITextFieldViewModeNever.
+ *  * \b WhileEditing for \b UITextFieldViewModeWhileEditing.
+ *  * \b UnlessEditing for \b UITextFieldViewModeUnlessEditing.
+ *  * \b Always for \b UITextFieldViewModeAlways.
+ */
++ (NSDictionary *)nuiConstantsForClearButtonMode;
 /*! Allows to load \b keyboardType property using following values:
  *  * \b Default for \b UIKeyboardTypeDefault.
  *  * \b ASCIICapable for \b UIKeyboardTypeASCIICapable.

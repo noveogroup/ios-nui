@@ -17,9 +17,9 @@
 @interface NUILayoutView : UIView
 
 /*! Changing this property causes removing subviews from old layout and adding from new one. */
-@property (nonatomic, retain) NUILayout *layout;
+@property (nonatomic, retain) IBOutlet NUILayout *layout;
 
 /*! If not \b nil subviews layouting will be animated. */
-@property (nonatomic, retain) NUILayoutAnimation *layoutAnimation;
+@property (nonatomic, retain) IBOutlet NUILayoutAnimation *layoutAnimation;
 
 @end

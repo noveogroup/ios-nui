@@ -21,8 +21,8 @@ NSString *propertyClassName(Class cl, NSString *propertyName)
     if (strncmp(attributes, "T@\"", 3)) {
         return nil;
     }
-    int len = strlen(attributes);
-    for (int i = 3; i < len; ++i) {
+    size_t len = strlen(attributes);
+    for (size_t i = 3; i < len; ++i) {
         if (attributes[i] == '\"') {
             return [[NSString alloc] initWithBytes:attributes + 3
                                              length:i - 3

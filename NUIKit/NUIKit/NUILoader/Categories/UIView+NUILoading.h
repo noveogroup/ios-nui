@@ -17,7 +17,7 @@
  */
 @interface UIView (NUILoading)
 
-/*! \b backgroundColor is not a real property, so adding declaration to allow atomatic loadind. */
+/*! \b backgroundColor is not a real property, so adding declaration to allow atomatic loading. */
 @property (nonatomic, copy) UIColor *backgroundColor;
 
 /*! Allows to load \b autoresizingMask property using following values:

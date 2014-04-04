@@ -15,7 +15,7 @@
 @property (nonatomic, unsafe_unretained) NSTimeInterval duration;
 /*! Default value is 0.0. */
 @property (nonatomic, unsafe_unretained) NSTimeInterval delay;
-/*! Default value is \b UIViewAnimationCurveEaseInOut. */
-@property (nonatomic, unsafe_unretained) UIViewAnimationCurve curve;
+/*! Default value is \b UIViewAnimationOptionCurveEaseInOut. */
+@property (nonatomic, unsafe_unretained) UIViewAnimationOptions options;
 
 @end

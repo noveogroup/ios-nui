@@ -13,6 +13,7 @@
 
 @interface NUILayout ()
 {
+    NSMutableArray *containingLayoutItems_;
     NSMutableArray *subviews_;
     NSMutableDictionary *layoutItems_;
 }
@@ -39,17 +40,23 @@
 
 #pragma mark - Properties
 
+- (void)setHidden:(BOOL)hidden
+{
+    hidden_ = hidden;
+    if (hidden_) {
+        for (id<NUIView> subview in subviews_) {
+            subview.hidden = YES;
+        }
+    }
+}
+
 - (void)setNeedsToUpdateSize:(BOOL)needsToUpdateSize
 {
+    _needsToUpdateSize = needsToUpdateSize;
     if (needsToUpdateSize) {
         self.superview.needsToUpdateSize = YES;
         [self.superview setNeedsLayout];
     }
-}
-
-- (BOOL)needsToUpdateSize
-{
-    return NO;
 }
 
 - (NUILayoutItem *)layoutItem
@@ -57,12 +64,48 @@
     return  [[self.superview layout] layoutItemForSubview:self recursively:YES];
 }
 
+- (NSArray *)layoutItems
+{
+    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:
+        containingLayoutItems_.count];
+    for (NSValue *value in containingLayoutItems_) {
+        [result addObject:[value nonretainedObjectValue]];
+    }
+    return result;
+}
+
+- (void)addLayoutItem:(NUILayoutItem *)layoutItem
+{
+    if (!containingLayoutItems_) {
+        containingLayoutItems_ = [[NSMutableArray alloc] init];
+    }
+    [containingLayoutItems_ addObject:[NSValue valueWithNonretainedObject:
+        layoutItem]];
+}
+
+- (void)removeLayoutItem:(NUILayoutItem *)layoutItem
+{
+    [containingLayoutItems_ enumerateObjectsUsingBlock:^(NSValue *obj,
+        NSUInteger idx, BOOL *stop) {
+            if (layoutItem == [obj nonretainedObjectValue]) {
+                [containingLayoutItems_ removeObjectAtIndex:idx];
+                *stop = YES;
+            }
+        }];
+}
+
 - (void)setFrame:(CGRect)frame
 {
     for (id<NUIView> subview in self.subviews) {
         subview.needsToUpdateSize = NO;
     }
+    self.needsToUpdateSize = NO;
     [self layoutInRect:frame];
+    if (hidden_) {
+        for (id<NUIView> subview in subviews_) {
+            subview.hidden = YES;
+        }
+    }
 }
 
 - (void)addToView:(NUILayoutView *)view
@@ -188,12 +231,14 @@
     layoutItem.view = subview;
     NSString *key = [[NSString alloc] initWithFormat:@"%p", subview];
     [layoutItems_ setObject:layoutItem forKey:key];
+    self.needsToUpdateSize = YES;
 }
 
 - (void)removeLayoutItemForSubview:(id<NUIView>)subview
 {
     NSString *key = [[NSString alloc] initWithFormat:@"%p", subview];
-    return [layoutItems_ removeObjectForKey:key];
+    [layoutItems_ removeObjectForKey:key];
+    self.needsToUpdateSize = YES;
 }
 
 @end

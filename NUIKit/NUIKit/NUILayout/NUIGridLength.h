@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 
 typedef enum {
-    /*! Size is calculated automatically depending on content size. */
+    /*! Size is calculated automatically depending on content size. \b value is
+     *  used as a priority. */
     NUIGridLengthType_Auto = 0,
     /*! Size is fixed. */
     NUIGridLengthType_Pixel,
-    /*! Size is calculated automatically depending on leftover size. \b value is used as a
-     *  proportionfactor. */
+    /*! Size is calculated automatically depending on leftover size. \b value is
+     *  used as a proportion factor. */
     NUIGridLengthType_Star,
 } NUIGridLengthType;
 
@@ -27,7 +28,8 @@ typedef enum {
 /*! Initializes an object with NUIGridLengthType_Pixel type. */
 - (id)initWithPixelValue:(CGFloat)value;
 - (id)initWithValue:(CGFloat)value type:(NUIGridLengthType)type;
-/*! Allows to simplify creation of arrays of \b NUIGridLength. The following value are acceptable:
+/*! Allows to simplify creation of arrays of \b NUIGridLength. The following
+ *  value are acceptable:
  *  * \b auto for NUIGridLengthType_Auto
  *  * \b <number> for NUIGridLengthType_Pixel
  *  * \b <number>* for NUIGridLengthType_Star

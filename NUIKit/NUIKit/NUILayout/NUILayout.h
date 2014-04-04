@@ -18,12 +18,16 @@
  */
 @interface NUILayout : NSObject <NUIView>
 
-/*! A view where \b subviews are placed. \b supreview.layout is not necessary equals to the current
+/*! A view where \b subviews are placed. \b superview.layout is not necessary equals to the current
  *  object.
  */
 @property (nonatomic, unsafe_unretained) NUILayoutView *superview;
 @property (nonatomic, unsafe_unretained, getter=isHidden) BOOL hidden;
 @property (nonatomic, unsafe_unretained) BOOL needsToUpdateSize;
+
+/*! An object that should help to distinct one layout from another when
+ *  debugging. */
+@property (nonatomic, strong) id tag;
 
 /*! Adds view, layout item pair to layout. */
 - (void)addSubview:(id<NUIView>)view layoutItem:(NUILayoutItem *)layoutItem;
@@ -45,7 +49,7 @@
 /*! Returns layout item that corresponds to \b subview. */
 - (NUILayoutItem *)layoutItemForSubview:(id<NUIView>)subview;
 /*! Returns layout item that corresponds to \b subview. If \b recursively is set to \b YES than
- * prefroms search in sublayouts too.
+ * preforms search in sublayouts too.
  */
 - (NUILayoutItem *)layoutItemForSubview:(id<NUIView>)subview recursively:(BOOL)recursively;
 /*! Override to perform layouting. */

@@ -6,9 +6,10 @@
 //  Copyright (c) 2012 Noveo Group. All rights reserved.
 //
 
-#import <CoreGraphics/CoreGraphics.h>
 #import "NUIVerticalLayout.h"
 #import "NUILayoutItem.h"
+
+#import "NUIMath.h"
 
 @implementation NUIVerticalLayout
 
@@ -37,7 +38,7 @@
     [self.subviews enumerateObjectsUsingBlock:^(id<NUIView> subview, NSUInteger idx, BOOL *stop) {
         NUILayoutItem *item = [self layoutItemForSubview:subview];
         if (item.verticalAlignment == NUIVerticalAlignment_Stretch && restSize > 0) {
-            CGFloat additionalSize = floorf(restSize / cStretchable);
+            CGFloat additionalSize = nuiScaledFloorf(restSize / cStretchable);
             sizes[idx].height += additionalSize;
             restSize -= additionalSize;
             --cStretchable;

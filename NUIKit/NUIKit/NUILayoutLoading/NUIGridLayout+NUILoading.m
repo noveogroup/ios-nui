@@ -14,7 +14,7 @@
 @implementation NUIGridLayout (NUILoading)
 
 - (BOOL)loadNUIColumnsFromRValue:(NUIStatement *)value loader:(NUILoader *)loader
-    error:(NUIError **)error;
+    error:(NUIError **)error
 {
     if (value.statementType != NUIStatementType_String) {
         *error = [NUIError errorWithData:value.data position:value.range.location

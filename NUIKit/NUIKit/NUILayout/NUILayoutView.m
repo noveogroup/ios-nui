@@ -11,11 +11,15 @@
 #import "UIView+NUILayout.h"
 #import "NUILayoutAnimation.h"
 
+static int NeedsToUpdateSizeObserverContext;
+
 @interface NUILayoutView ()
 {
     BOOL firstLayouting_;
     BOOL deallocating_;
 }
+
+@property (nonatomic, strong) NSMutableSet *observingViews;
 
 @end
 
@@ -27,6 +31,16 @@
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
+    if (self) {
+        firstLayouting_ = YES;
+        self.autoresizesSubviews = NO;
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
     if (self) {
         firstLayouting_ = YES;
         self.autoresizesSubviews = NO;
@@ -61,22 +75,30 @@
     }
 }
 
+- (NSMutableSet *)observingViews
+{
+    if (!_observingViews) {
+        _observingViews = [[NSMutableSet alloc] init];
+    }
+    return _observingViews;
+}
+
 - (void)layoutSubviews
 {
+    void (^animation)() = ^{
+        layout_.frame = self.bounds;
+        for (UIView *view in self.subviews) {
+            [view layoutIfNeeded];
+        }
+    };
     if (!firstLayouting_ && layoutAnimation_) {
-        [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDuration:layoutAnimation_.duration];
-        [UIView setAnimationDelay:layoutAnimation_.delay];
-        [UIView setAnimationCurve:layoutAnimation_.curve];
-    }
-    layout_.frame = self.bounds;
-    if (!firstLayouting_ && layoutAnimation_) {
-        [UIView commitAnimations];
+        [UIView animateWithDuration:layoutAnimation_.duration delay:
+            layoutAnimation_.delay options:layoutAnimation_.options
+            animations:animation completion:nil];
+    } else {
+        animation();
     }
     firstLayouting_ = NO;
-    for (UIView *view in self.subviews) {
-        [view layoutIfNeeded];
-    }
 }
 
 - (CGSize)preferredSizeThatFits:(CGSize)size
@@ -92,11 +114,15 @@
 - (void)didAddSubview:(UIView *)subview
 {
     [super didAddSubview:subview];
-
-    [subview addObserver:self
-              forKeyPath:@"needsToUpdateSize"
-                 options:NSKeyValueObservingOptionNew
-                 context:NULL];
+    // If we add a view that already added than willRemoveSubview won't be
+    // called, but didAddSubview will be called second time.
+    NSString *key = [NSString stringWithFormat:@"%p", subview];
+    if (![self.observingViews containsObject:key]) {
+        [self.observingViews addObject:key];
+        [subview addObserver:self forKeyPath:@"needsToUpdateSize"
+            options:NSKeyValueObservingOptionNew
+            context:&NeedsToUpdateSizeObserverContext];
+    }
     self.needsToUpdateSize = YES;
     [self setNeedsLayout];
 }
@@ -106,25 +132,26 @@
     [super willRemoveSubview:subview];
 
     if (!deallocating_) {
+        [self.observingViews removeObject:[NSString stringWithFormat:@"%p",
+            subview]];
         [subview removeObserver:self forKeyPath:@"needsToUpdateSize"];
         self.needsToUpdateSize = YES;
         [self setNeedsLayout];
     }
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(id)object
-                        change:(NSDictionary *)change
-                       context:(void *)context
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
+    change:(NSDictionary *)change context:(void *)context
 {
-    if ([keyPath isEqualToString:@"needsToUpdateSize"]) {
+    if (context == &NeedsToUpdateSizeObserverContext) {
         id newValue = [change objectForKey:NSKeyValueChangeNewKey];
         if (newValue != [NSNull null] && [newValue boolValue]) {
             self.needsToUpdateSize = YES;
             [self setNeedsLayout];
         }
     } else {
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+        [super observeValueForKeyPath:keyPath ofObject:object change:change
+            context:context];
     }
 }
 

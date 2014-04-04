@@ -53,6 +53,7 @@ static SEL propertyConstantsGetter(NSString *property)
 
 @interface NUILoader ()
 {
+    NSMutableSet *loadedFiles_;
     NSMutableDictionary *globalObjects_;
     NSMutableSet *rootProperties_;
     NSMutableDictionary *constants_;
@@ -95,6 +96,7 @@ static SEL propertyConstantsGetter(NSString *property)
 - (BOOL)loadFromFile:(NSString *)file
 {
     self.lastError = nil;
+    loadedFiles_ = [[NSMutableSet alloc] init];
     return [self loadFromFile:file mainFile:YES];
 }
 
@@ -140,7 +142,7 @@ static SEL propertyConstantsGetter(NSString *property)
 {
     for (NSString *name in rootProperties_) {
         SEL sel = setterFromProperty(name);
-        [rootObject_ performSelector:sel withObject:nil];
+        objc_msgSend(rootObject_, sel);
     }
 }
 
@@ -283,8 +285,8 @@ static SEL propertyConstantsGetter(NSString *property)
 {
     if (error) {
         NUIPositionInLine pos = [data positionInLineFromPosition:error.position];
-        NSLog(@"Error in file: \"%@\" line: %d position: %d.\nError: %@", data.fileName, pos.line +
-            1, pos.position + 1, error.message);
+        NSLog(@"Error in file: \"%@\" line: %lu position: %lu.\nError: %@", data.fileName,
+            (unsigned long)pos.line + 1, (unsigned long)pos.position + 1, error.message);
     } else {
         NSLog(@"Unknown error in file: \"%@\"", data.fileName);
     }
@@ -292,6 +294,11 @@ static SEL propertyConstantsGetter(NSString *property)
 
 - (BOOL)loadFromFile:(NSString *)file mainFile:(BOOL)mainFile
 {
+    if ([loadedFiles_ containsObject:file]) {
+        return YES;
+    }
+    [loadedFiles_ addObject:file];
+
     NUIData *data = [[NUIData alloc] init];
     data.fileName = file;
     NSString *fullPath = [[NSBundle mainBundle] pathForResource:file ofType:nil];
@@ -323,7 +330,7 @@ static SEL propertyConstantsGetter(NSString *property)
     [constants_ addEntriesFromDictionary:analyzer.constants];
     [styles_ addEntriesFromDictionary:analyzer.styles];
     [states_ addEntriesFromDictionary:analyzer.states];
-    if (mainFile) {
+    if (mainFile && analyzer.mainAssignment) {
         [globalObjects_ setObject:rootObject_ forKey:[analyzer.mainAssignment lvalue].value];
         if (![self loadObject:rootObject_ fromNUIObject:[analyzer.mainAssignment rvalue]]) {
             [self logError:self.lastError data:self.lastError ? self.lastError.data : data];
@@ -449,9 +456,9 @@ static SEL propertyConstantsGetter(NSString *property)
         }
         NSMethodSignature *sign = [[object class] instanceMethodSignatureForSelector:sel];
         const char *type = [sign getArgumentTypeAtIndex:2];
-        int len = strlen(type);
+        size_t len = strlen(type);
         if (len > 1 && type[0] == '{') {
-            for (int i = 0; i < len; ++i) {
+            for (size_t i = 0; i < len; ++i) {
                 if (type[i] == '=') {
                     NSString *tmp = [[NSString alloc] initWithBytes:type + 1 length:i - 1
                         encoding:NSASCIIStringEncoding];
@@ -489,7 +496,7 @@ static SEL propertyConstantsGetter(NSString *property)
     NSDictionary *constants = nil;
     SEL constantsGetter = propertyConstantsGetter(property);
     if ([[object class] respondsToSelector:constantsGetter]) {
-        constants = [[object class] performSelector:constantsGetter];
+        constants = objc_msgSend([object class], constantsGetter);
     }
     NSNumber *value = [self calculateNumericExpression:expression containingObject:object
         constants:constants];

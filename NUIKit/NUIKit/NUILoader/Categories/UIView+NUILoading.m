@@ -65,16 +65,25 @@
         return NO;
     }
     for (NUIStatement *object in array.value) {
-        if (object.statementType != NUIStatementType_Object) {
-            *error = [NUIError errorWithData:object.data position:object.range.location
-                message:@"Subview should be an object."];
-            return NO;
-        }
-        UIView *subview = [loader loadObjectOfClass:[UIView class] fromNUIObject:object];
-        if (subview) {
-            [self addSubview:subview];
+        if (object.statementType == NUIStatementType_Object) {
+            UIView *subview = [loader loadObjectOfClass:[UIView class] fromNUIObject:object];
+            if (subview) {
+                [self addSubview:subview];
+            } else {
+                *error = loader.lastError;
+                return NO;
+            }
+        } else if (object.statementType == NUIStatementType_Identifier) {
+            UIView *subview = [loader globalObjectForKey:object.value];
+            if (subview) {
+                [self addSubview:subview];
+            } else {
+                *error = loader.lastError;
+                return NO;
+            }
         } else {
-            *error = loader.lastError;
+            *error = [NUIError errorWithData:object.data position:object.range.location
+                message:@"Subview should be an object or identifier."];
             return NO;
         }
     }

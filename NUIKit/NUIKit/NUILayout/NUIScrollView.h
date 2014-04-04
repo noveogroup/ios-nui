@@ -20,7 +20,7 @@
 /*! Default value is \b YES. */
 @property (nonatomic, unsafe_unretained) BOOL verticalScrollerEnabled;
 /*! Default value is \b nil. */
-@property (nonatomic, strong) UIView *contentView;
+@property (nonatomic, strong) IBOutlet UIView *contentView;
 /*! By default vertical alignment is set to top. */
 @property (nonatomic, strong, readonly) NUILayoutItem *contentLayoutItem;
 

@@ -18,9 +18,9 @@
 /*! Allows to load \b UIImage from NUI. The following properties are can be used:
  *  * \b file - a string with a image name from resources.
  *  * \b leftCapWidth - an optional numeric property. If set
- *    \bstretchableImageWithLeftCapWidth:topCapHeight: will be used.
+ *    \b stretchableImageWithLeftCapWidth:topCapHeight: will be used.
  *  * \b topCapHeight - an optional numeric property. If set
- *    \bstretchableImageWithLeftCapWidth:topCapHeight: will be used.
+ *    \b stretchableImageWithLeftCapWidth:topCapHeight: will be used.
  */
 + (id)loadFromNUIObject:(NUIStatement *)nuiObject loader:(NUILoader *)loader
     error:(NUIError **)error;

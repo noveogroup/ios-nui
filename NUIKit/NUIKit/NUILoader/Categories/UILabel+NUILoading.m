@@ -21,9 +21,9 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         textAlignmentConstants = [[NSDictionary alloc] initWithObjectsAndKeys:
-            [NSNumber numberWithInt:UITextAlignmentLeft], @"Left",
-            [NSNumber numberWithInt:UITextAlignmentCenter], @"Center",
-            [NSNumber numberWithInt:UITextAlignmentRight], @"Right",
+            [NSNumber numberWithInt:NSTextAlignmentLeft], @"Left",
+            [NSNumber numberWithInt:NSTextAlignmentCenter], @"Center",
+            [NSNumber numberWithInt:NSTextAlignmentRight], @"Right",
             nil];
     });
     return textAlignmentConstants;
@@ -35,12 +35,12 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         lineBreakModeConstants = [[NSDictionary alloc] initWithObjectsAndKeys:
-            [NSNumber numberWithInt:UILineBreakModeWordWrap], @"WordWrap",
-            [NSNumber numberWithInt:UILineBreakModeCharacterWrap], @"CharacterWrap",
-            [NSNumber numberWithInt:UILineBreakModeClip], @"Clip",
-            [NSNumber numberWithInt:UILineBreakModeHeadTruncation], @"HeadTruncation",
-            [NSNumber numberWithInt:UILineBreakModeTailTruncation], @"TailTruncation",
-            [NSNumber numberWithInt:UILineBreakModeMiddleTruncation], @"MiddleTruncation",
+            [NSNumber numberWithInt:NSLineBreakByWordWrapping], @"WordWrap",
+            [NSNumber numberWithInt:NSLineBreakByCharWrapping], @"CharacterWrap",
+            [NSNumber numberWithInt:NSLineBreakByClipping], @"Clip",
+            [NSNumber numberWithInt:NSLineBreakByTruncatingHead], @"HeadTruncation",
+            [NSNumber numberWithInt:NSLineBreakByTruncatingTail], @"TailTruncation",
+            [NSNumber numberWithInt:NSLineBreakByTruncatingMiddle], @"MiddleTruncation",
             nil];
     });
 

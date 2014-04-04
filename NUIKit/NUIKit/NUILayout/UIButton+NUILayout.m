@@ -16,6 +16,7 @@
     size.height -= self.contentEdgeInsets.top + self.contentEdgeInsets.bottom;
     CGSize imageSz = CGSizeZero;
     if (self.currentImage) {
+        self.imageView.image = self.currentImage;
         CGSize sz = CGSizeMake(size.width - self.imageEdgeInsets.left - self.imageEdgeInsets.right,
             size.height - self.imageEdgeInsets.top - self.imageEdgeInsets.bottom);
         imageSz = [self.imageView sizeThatFits:sz];
@@ -27,8 +28,13 @@
     if (self.currentTitle) {
         CGSize sz = CGSizeMake(size.width - self.titleEdgeInsets.left - self.titleEdgeInsets.right,
             size.height - self.titleEdgeInsets.top - self.titleEdgeInsets.bottom);
-        titleSz = [self.currentTitle sizeWithFont:self.titleLabel.font constrainedToSize:sz
-            lineBreakMode:self.titleLabel.lineBreakMode];
+        if (self.titleLabel.numberOfLines == 1) {
+            titleSz = [self.currentTitle sizeWithFont:self.titleLabel.font constrainedToSize:(CGSize){CGFLOAT_MAX, sz.height}
+                lineBreakMode:self.titleLabel.lineBreakMode];
+        } else {
+            titleSz = [self.currentTitle sizeWithFont:self.titleLabel.font constrainedToSize:sz
+                lineBreakMode:self.titleLabel.lineBreakMode];
+        }
         titleSz.width += self.titleEdgeInsets.left + self.titleEdgeInsets.right;
         titleSz.height += self.titleEdgeInsets.top + self.titleEdgeInsets.bottom;
     }

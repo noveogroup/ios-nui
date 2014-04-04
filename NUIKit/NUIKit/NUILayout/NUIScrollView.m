@@ -28,9 +28,45 @@
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        verticalScrollerEnabled_ = YES;
+        contentLayoutItem_ = [[NUILayoutItem alloc] init];
+        contentLayoutItem_.verticalAlignment = NUIVerticalAlignment_Top;
+    }
+    return self;
+}
+
 - (void)dealloc
 {
     [contentView_ removeObserver:self forKeyPath:@"needsToUpdateSize"];
+}
+
+- (void)setFrame:(CGRect)frame
+{
+    // For some reason when setting scroll view size to a bigger value with
+    // animation (enough to cause contentOffset change) animation becomes
+    // incorrect: only center is animated not bounds.
+    CGSize sz = [self preferredSizeThatFits:frame.size];
+    UIEdgeInsets contentInset = self.contentInset;
+    sz.width += contentInset.left + contentInset.right;
+    sz.height += contentInset.top + contentInset.bottom;
+    sz.width = MAX(sz.width, frame.size.width);
+    sz.height = MAX(sz.height, frame.size.height);
+    // contentOffset = bounds.origin, but we can animate bounds.origin as we
+    // want.
+    CGPoint contentOffset = self.bounds.origin;
+    if (contentOffset.x + frame.size.width > sz.width) {
+        contentOffset.x = sz.width - frame.size.width;
+    }
+    if (contentOffset.y + frame.size.height > sz.height) {
+        contentOffset.y = sz.height - frame.size.height;
+    }
+    [self setCenter:(CGPoint){frame.origin.x + frame.size.width / 2,
+        frame.origin.y + frame.size.height / 2}];
+    [super setBounds:(CGRect){contentOffset, frame.size}];
 }
 
 - (void)setHorizontalScrollerEnabled:(BOOL)horizontalScrollerEnabled
@@ -70,8 +106,7 @@
 
 - (void)layoutSubviews
 {
-    [super layoutSubviews];
-    CGSize constraintSize = CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX);
+    CGSize constraintSize = CGSizeMake(0, 0);
     if (!horizontalScrollerEnabled_) {
         constraintSize.width = self.bounds.size.width;
     }
@@ -80,14 +115,14 @@
     }
     CGSize maxSize = self.bounds.size;
     CGSize size = [contentLayoutItem_ sizeWithMarginThatFits:constraintSize];
-    if (maxSize.width < size.width) {
+    if (maxSize.width < size.width && horizontalScrollerEnabled_) {
         maxSize.width = size.width;
     }
-    if (maxSize.height < size.height) {
+    if (maxSize.height < size.height && verticalScrollerEnabled_) {
         maxSize.height = size.height;
     }
     self.contentSize = maxSize;
-    
+
     [contentLayoutItem_ placeInRect:CGRectMake(0, 0, maxSize.width, maxSize.height)
                       preferredSize:size];
 }
@@ -111,7 +146,7 @@
 
 - (CGSize)preferredSizeThatFits:(CGSize)size
 {
-    return [contentView_ preferredSizeThatFits:size];
+    return [contentLayoutItem_ sizeWithMarginThatFits:size];
 }
 
 @end

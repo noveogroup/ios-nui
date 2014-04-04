@@ -13,6 +13,7 @@
 #import "NUILayoutItem.h"
 
 static int NeedsToUpdateSizeKey;
+static int LayoutItemsKey;
 
 @implementation UIView (NUILayout)
 
@@ -22,7 +23,7 @@ static int NeedsToUpdateSizeKey;
 {
     NSNumber *value = [NSNumber numberWithBool:needsToUpdateSize];
     objc_setAssociatedObject(self, &NeedsToUpdateSizeKey, value,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (BOOL)needsToUpdateSize
@@ -40,9 +41,57 @@ static int NeedsToUpdateSizeKey;
     return nil;
 }
 
+- (NSArray *)layoutItems
+{
+    NSMutableArray *items = objc_getAssociatedObject(self, &LayoutItemsKey);
+    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:
+        items.count];
+    for (NSValue *value in items) {
+        [result addObject:[value nonretainedObjectValue]];
+    }
+    return result;
+}
+
+- (void)addLayoutItem:(NUILayoutItem *)layoutItem
+{
+    NSMutableArray *items = objc_getAssociatedObject(self, &LayoutItemsKey);
+    if (!items) {
+        items = [[NSMutableArray alloc] init];
+        objc_setAssociatedObject(self, &LayoutItemsKey, items,
+            OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
+    }
+    [items addObject:[NSValue valueWithNonretainedObject:layoutItem]];
+}
+
+- (void)removeLayoutItem:(NUILayoutItem *)layoutItem
+{
+    NSMutableArray *items = objc_getAssociatedObject(self, &LayoutItemsKey);
+    [items enumerateObjectsUsingBlock:^(NSValue *obj, NSUInteger idx, BOOL *stop) {
+        if (layoutItem == [obj nonretainedObjectValue]) {
+            [items removeObjectAtIndex:idx];
+            *stop = YES;
+        }
+    }];
+}
+
 - (CGSize)preferredSizeThatFits:(CGSize)size
 {
     return CGSizeZero;
+}
+
+- (CGFloat)preferredHeightForWidth:(CGFloat)width
+{
+    return [self preferredSizeThatFits:(CGSize){width, CGFLOAT_MAX}].height;
+}
+
+- (CGFloat)preferredWidthForHeight:(CGFloat)height
+{
+    return [self preferredSizeThatFits:(CGSize){CGFLOAT_MAX, height}].width;
+}
+
+- (void)layoutLayerIfNeeded
+{
 }
 
 - (void)addToView:(NUILayoutView *)view

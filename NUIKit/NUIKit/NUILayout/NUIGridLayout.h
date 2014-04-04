@@ -16,32 +16,33 @@ typedef enum {
     NUIGridLayoutInsertionMethod_TopDownLeftRight
 } NUIGridLayoutInsertionMethod;
 
-/*! Layouts subviews in a grid. A subview can take several columns and rows. If there are not enough
- *  columns or rows they are added automatically with \b NUIGridLengthType_Auto type.
- */
+/*! WARNING: NUIGridLayout behaviour is not quite correct better to use NUIHorizontalCellLayout and
+ *  NUIVerticalCellLayout.
+ *  Layouts subviews in a grid. A subview can take several columns and rows. If there are not enough
+ *  columns or rows they are added automatically with \b NUIGridLengthType_Auto type. */
+__attribute__((deprecated))
 @interface NUIGridLayout : NUILayout
 
-/*! An array of \b NUIGridLength. */
+/*! Columns definition excluding added automatically. An array \b NUIGridLength. */
 @property (nonatomic, copy) NSArray *columns;
-/*! An array of \b NUIGridLength. */
+/*! Rows definition excluding added automatically. An array of \b NUIGridLength. */
 @property (nonatomic, copy) NSArray *rows;
 /*! Setting this property allows to place subviews one after another without specifying columns and
- *  rows explicitly.
- */
+ *  rows explicitly. */
 @property (nonatomic, unsafe_unretained) NUIGridLayoutInsertionMethod insertionMethod;
 
-/*! Allows to simplify setting of columns and rows. \b columns and \b rows are arrays of strings
- *  that used to create \b NUIGridLength with \b initWithString: method. */
+/*! Initialize layout with the specified columns and rows. \b columns and \b rows are arrays of
+ *  strings that used to create \b NUIGridLength with \b initWithString: method. */
 - (id)initWithColumns:(NSArray *)columns rows:(NSArray *)rows;
-/*! Allows to simplify setting of columns and rows. \b columns and \b rows are arrays of strings
- *  that used to create \b NUIGridLength with \b initWithString: method. */
+/*! Simplified setting of columns and rows. \b columns and \b rows are arrays of strings that used
+ *  to create \b NUIGridLength with \b initWithString: method. */
 - (void)setColumns:(NSArray *)columns rows:(NSArray *)rows;
 
 /*! Places \b view in a 1x1 cell according to \b insertionMethod. */
 - (NUIGridLayoutItem *)addSubview:(id<NUIView>)view;
-/*! Places \b view in a 1x1 cell. */
+/*! Places \b view in the specified 1x1 cell. */
 - (NUIGridLayoutItem *)addSubview:(id<NUIView>)view column:(NSUInteger)column row:(NSUInteger)row;
-/*! Places \b view in a specified cell. */
+/*! Places \b view in the specified cells. */
 - (NUIGridLayoutItem *)addSubview:(id<NUIView>)view columnRange:(NSRange)columnRange
     rowRange:(NSRange)rowRange;
 /*! Places \b view in a cell of \b columns x \b rows size according to \b insertionMethod. */

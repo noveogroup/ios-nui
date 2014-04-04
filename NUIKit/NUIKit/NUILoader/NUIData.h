@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 typedef struct NUIPositionInLine {
-    int line;
-    int position;
+    NSUInteger line;
+    NSUInteger position;
 } NUIPositionInLine;
 
 @interface NUIData : NSObject
@@ -18,6 +18,6 @@ typedef struct NUIPositionInLine {
 @property (nonatomic, copy) NSString *fileName;
 @property (nonatomic, copy) NSString *data;
 
-- (NUIPositionInLine)positionInLineFromPosition:(int)position;
+- (NUIPositionInLine)positionInLineFromPosition:(NSUInteger)position;
 
 @end

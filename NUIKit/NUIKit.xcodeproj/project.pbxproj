@@ -14,7 +14,7 @@
 		2CE05D721604D4740079A621 /* UITableView+NUILayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE05D6E1604D4740079A621 /* UITableView+NUILayout.h */; };
 		2CE05D731604D4740079A621 /* UITableView+NUILayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE05D6F1604D4740079A621 /* UITableView+NUILayout.m */; };
 		318212D2D26421F06E86C561 /* NUIData.h in Headers */ = {isa = PBXBuildFile; fileRef = 31821F228888E8398B1803C0 /* NUIData.h */; };
-		318216A3274E7B84F1D29C0C /* NUIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 31821F5CB85004435C71B8D0 /* NUIView.h */; };
+		318216A3274E7B84F1D29C0C /* NUIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 31821F5CB85004435C71B8D0 /* NUIView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		31821C5FB788D982A21A6CF1 /* NUIData.m in Sources */ = {isa = PBXBuildFile; fileRef = 31821F30DD9C8880BB448E2D /* NUIData.m */; };
 		BD15054F15CF954C0096EB13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD15054E15CF954C0096EB13 /* Foundation.framework */; };
 		BD15055D15CF957E0096EB13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD15055C15CF957E0096EB13 /* UIKit.framework */; };
@@ -80,14 +80,14 @@
 		BDCE268E15D38B9200560545 /* NUIStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = BDCE268C15D38B9200560545 /* NUIStatement.m */; };
 		BDDE2F8115DE5F7500A1145A /* UIColor+NUILoading.h in Headers */ = {isa = PBXBuildFile; fileRef = BDDE2F7F15DE5F7500A1145A /* UIColor+NUILoading.h */; };
 		BDDE2F8215DE5F7500A1145A /* UIColor+NUILoading.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDE2F8015DE5F7500A1145A /* UIColor+NUILoading.m */; };
-		BDFB31FE18D6F17B00656B79 /* NUIMath.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFB31FC18D6F17B00656B79 /* NUIMath.h */; };
+		BDFB31FE18D6F17B00656B79 /* NUIMath.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFB31FC18D6F17B00656B79 /* NUIMath.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BDFB31FF18D6F17B00656B79 /* NUIMath.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFB31FD18D6F17B00656B79 /* NUIMath.m */; };
-		BDFB320118D6F28500656B79 /* NUILayouts.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFB320018D6F28500656B79 /* NUILayouts.h */; };
-		BDFB320818D6F71800656B79 /* NUICellLayoutItem.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFB320218D6F71800656B79 /* NUICellLayoutItem.h */; };
+		BDFB320118D6F28500656B79 /* NUILayouts.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFB320018D6F28500656B79 /* NUILayouts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BDFB320818D6F71800656B79 /* NUICellLayoutItem.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFB320218D6F71800656B79 /* NUICellLayoutItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BDFB320918D6F71800656B79 /* NUICellLayoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFB320318D6F71800656B79 /* NUICellLayoutItem.m */; };
-		BDFB320A18D6F71800656B79 /* NUIHorizontalCellLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFB320418D6F71800656B79 /* NUIHorizontalCellLayout.h */; };
+		BDFB320A18D6F71800656B79 /* NUIHorizontalCellLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFB320418D6F71800656B79 /* NUIHorizontalCellLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BDFB320B18D6F71800656B79 /* NUIHorizontalCellLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFB320518D6F71800656B79 /* NUIHorizontalCellLayout.m */; };
-		BDFB320C18D6F71800656B79 /* NUIVerticalCellLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFB320618D6F71800656B79 /* NUIVerticalCellLayout.h */; };
+		BDFB320C18D6F71800656B79 /* NUIVerticalCellLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFB320618D6F71800656B79 /* NUIVerticalCellLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BDFB320D18D6F71800656B79 /* NUIVerticalCellLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFB320718D6F71800656B79 /* NUIVerticalCellLayout.m */; };
 		BDFB321218D6F7DF00656B79 /* NUIHorizontalCellLayout+NUILoading.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFB320E18D6F7DF00656B79 /* NUIHorizontalCellLayout+NUILoading.h */; };
 		BDFB321318D6F7DF00656B79 /* NUIHorizontalCellLayout+NUILoading.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFB320F18D6F7DF00656B79 /* NUIHorizontalCellLayout+NUILoading.m */; };
@@ -387,16 +387,13 @@
 				BD1505CC15CF97D50096EB13 /* NUIHorizontalLayout.h in Headers */,
 				BD1505CD15CF97D50096EB13 /* NUILabel.h in Headers */,
 				BD1505CE15CF97D50096EB13 /* NUILayout.h in Headers */,
-				BDFB320118D6F28500656B79 /* NUILayouts.h in Headers */,
 				BD1505CF15CF97D50096EB13 /* NUILayoutAnimation.h in Headers */,
 				BDFB321418D6F7DF00656B79 /* NUIVerticalCellLayout+NUILoading.h in Headers */,
-				BDFB31FE18D6F17B00656B79 /* NUIMath.h in Headers */,
 				BD1505D015CF97D50096EB13 /* NUILayoutItem.h in Headers */,
 				BD1505D115CF97D50096EB13 /* NUILayoutView.h in Headers */,
 				BD1505D215CF97D60096EB13 /* NUIScrollView.h in Headers */,
 				BD1505D315CF97D60096EB13 /* NUISimpleLayout.h in Headers */,
 				BD1505D415CF97D60096EB13 /* NUIVerticalLayout.h in Headers */,
-				BDFB320818D6F71800656B79 /* NUICellLayoutItem.h in Headers */,
 				BD1505D515CF97D60096EB13 /* UIView+NUILayout.h in Headers */,
 				BD1505D615CF97D60096EB13 /* NUIGridLayout+NUILoading.h in Headers */,
 				BD1505D715CF97D60096EB13 /* NUILayout+NUILoading.h in Headers */,
@@ -407,21 +404,24 @@
 				BDFB321218D6F7DF00656B79 /* NUIHorizontalCellLayout+NUILoading.h in Headers */,
 				BD1505DC15CF97D60096EB13 /* UIControl+NUILoading.h in Headers */,
 				BD1505DD15CF97D60096EB13 /* UIFont+NUILoading.h in Headers */,
-				BDFB320A18D6F71800656B79 /* NUIHorizontalCellLayout.h in Headers */,
 				BD1505DE15CF97D60096EB13 /* UIImage+NUILoading.h in Headers */,
+				BDFB320118D6F28500656B79 /* NUILayouts.h in Headers */,
 				BD1505DF15CF97D60096EB13 /* UILabel+NUILoading.h in Headers */,
+				BDFB320A18D6F71800656B79 /* NUIHorizontalCellLayout.h in Headers */,
 				BD1505E115CF97D60096EB13 /* UITextField+NUILoading.h in Headers */,
+				BDFB31FE18D6F17B00656B79 /* NUIMath.h in Headers */,
 				BD1505E215CF97D60096EB13 /* UIView+NUILoading.h in Headers */,
+				BDFB320818D6F71800656B79 /* NUICellLayoutItem.h in Headers */,
 				BD1505E315CF97D60096EB13 /* NUIAnalyzer.h in Headers */,
+				BDFB320C18D6F71800656B79 /* NUIVerticalCellLayout.h in Headers */,
+				318216A3274E7B84F1D29C0C /* NUIView.h in Headers */,
 				BD1505E615CF97D60096EB13 /* NUILoader.h in Headers */,
 				BD1505E815CF97D60096EB13 /* nui_utils.h in Headers */,
 				BDCE268D15D38B9200560545 /* NUIStatement.h in Headers */,
 				2C133B1815D93A4200480DDD /* NUIError.h in Headers */,
 				CD6B002AA96E979DEE425C7C /* NUIStatement+Object.h in Headers */,
-				BDFB320C18D6F71800656B79 /* NUIVerticalCellLayout.h in Headers */,
 				CD6B0ADA3B4C772DD7F06F48 /* NUIStatement+BinaryOperator.h in Headers */,
 				318212D2D26421F06E86C561 /* NUIData.h in Headers */,
-				318216A3274E7B84F1D29C0C /* NUIView.h in Headers */,
 				BDDE2F8115DE5F7500A1145A /* UIColor+NUILoading.h in Headers */,
 				2CE05D701604D4740079A621 /* UIButton+NUILayout.h in Headers */,
 				2CE05D721604D4740079A621 /* UITableView+NUILayout.h in Headers */,

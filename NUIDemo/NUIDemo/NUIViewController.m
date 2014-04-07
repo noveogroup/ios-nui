@@ -25,7 +25,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.loader = [[[NUILoader alloc] initWithRootObject:self] autorelease];
+    self.loader = [[NUILoader alloc] initWithRootObject:self];
     [loader_ loadFromFile:@"nui.nui"];
     label2_.backgroundColor = [UIColor blueColor];
     label2_.backgroundColor = [UIColor redColor];
@@ -47,12 +47,6 @@
     } else {
         [loader_ loadState:@"hidden"];
     }
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

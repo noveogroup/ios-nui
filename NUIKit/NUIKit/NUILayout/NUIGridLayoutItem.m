@@ -25,6 +25,16 @@
     return self;
 }
 
+- (id)copyWithZone:(NSZone *)zone
+{
+    NUIGridLayoutItem *copy = [super copyWithZone:zone];
+    if (copy) {
+        copy.columnRange = columnRange_;
+        copy.rowRange = rowRange_;
+    }
+    return copy;
+}
+
 - (void)setColumnRange:(NSRange)columnRange
 {
     columnRange_ = columnRange;

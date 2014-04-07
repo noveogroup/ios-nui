@@ -29,12 +29,6 @@
     }
     return self;
 }
-							
-- (void)dealloc
-{
-    [vcs_ release];
-    [super dealloc];
-}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -57,10 +51,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    
+
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 
@@ -71,9 +65,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UIViewController *vc
-    = [[NSClassFromString([[vcs_ objectAtIndex:indexPath.row] objectForKey:@"class"]) alloc] init];
+        = [[NSClassFromString([[vcs_ objectAtIndex:indexPath.row] objectForKey:@"class"]) alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
-    [vc release];
 }
 
 @end

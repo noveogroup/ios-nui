@@ -13,18 +13,18 @@
 @class NUILayout;
 
 typedef enum {
-    NUIVerticalAlignment_Center,
-    NUIVerticalAlignment_Top,
-    NUIVerticalAlignment_Bottom,
-    NUIVerticalAlignment_Stretch,
-} NUIVerticalAlignment;
-
-typedef enum {
     NUIHorizontalAlignment_Center,
     NUIHorizontalAlignment_Left,
     NUIHorizontalAlignment_Right,
     NUIHorizontalAlignment_Stretch,
 } NUIHorizontalAlignment;
+
+typedef enum {
+    NUIVerticalAlignment_Center,
+    NUIVerticalAlignment_Top,
+    NUIVerticalAlignment_Bottom,
+    NUIVerticalAlignment_Stretch,
+} NUIVerticalAlignment;
 
 typedef enum {
     NUIVisibility_Visible,
@@ -33,14 +33,14 @@ typedef enum {
 } NUIVisibility;
 
 /*! A base class for layout item. Layout item defines layouting attributes of corresponding view. */
-@interface NUILayoutItem : NSObject
+@interface NUILayoutItem : NSObject<NSCopying>
 
 @property (nonatomic, unsafe_unretained) NUILayout *layout;
 @property (nonatomic, strong) id<NUIView> view;
 
 @property (nonatomic, unsafe_unretained) UIEdgeInsets margin;
-@property (nonatomic, unsafe_unretained) NUIVerticalAlignment verticalAlignment;
 @property (nonatomic, unsafe_unretained) NUIHorizontalAlignment horizontalAlignment;
+@property (nonatomic, unsafe_unretained) NUIVerticalAlignment verticalAlignment;
 
 @property (nonatomic, unsafe_unretained) CGSize minSize;
 @property (nonatomic, unsafe_unretained) CGSize maxSize;

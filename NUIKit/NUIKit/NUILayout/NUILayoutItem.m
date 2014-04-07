@@ -16,8 +16,8 @@ static int ObserverContext;
 
 @interface NUILayoutItem ()
 {
-    CGSize lastPrefferedSize_;
-    CGSize lastPrefferedSizeConstraint_;
+    CGSize lastPreferredSize_;
+    CGSize lastPreferredSizeConstraint_;
 }
 @end
 
@@ -43,14 +43,16 @@ static int ObserverContext;
 
 @synthesize visibility = visibility_;
 
+@synthesize tag = tag_;
+
 - (id)init
 {
     self = [super init];
     if (self) {
         maxWidth_ = CGFLOAT_MAX;
         maxHeight_ = CGFLOAT_MAX;
-        lastPrefferedSize_ = CGSizeMake(-1, -1);
-        lastPrefferedSizeConstraint_ = CGSizeMake(-1, -1);
+        lastPreferredSize_ = CGSizeMake(-1, -1);
+        lastPreferredSizeConstraint_ = CGSizeMake(-1, -1);
 
         [self addObserver:self forKeyPath:@"view.needsToUpdateSize" options:0
             context:&ObserverContext];
@@ -62,6 +64,34 @@ static int ObserverContext;
 {
     [self removeObserver:self forKeyPath:@"view.needsToUpdateSize"];
     [self.view removeLayoutItem:self];
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    NUILayoutItem *copy = [[[self class] allocWithZone:zone] init];
+    if (copy) {
+        copy.margin = margin_;
+        copy.horizontalAlignment = horizontalAlignment_;
+        copy.verticalAlignment = verticalAlignment_;
+
+        copy.minWidth = minWidth_;
+        copy.maxWidth = maxWidth_;
+
+        copy.minHeight = minHeight_;
+        copy.maxHeight = maxHeight_;
+
+        if (isFixedWidthSet_) {
+            copy.fixedWidth = fixedWidth_;
+        }
+
+        if (isFixedHeightSet_) {
+            copy.fixedHeight = fixedHeight_;
+        }
+
+        copy.visibility = visibility_;
+        copy.tag = tag_;
+    }
+    return copy;
 }
 
 - (void)setView:(id<NUIView>)view
@@ -187,8 +217,8 @@ static int ObserverContext;
 {
     if (context == &ObserverContext) {
         if ([view_ needsToUpdateSize]) {
-            lastPrefferedSize_ = CGSizeMake(-1, -1);
-            lastPrefferedSizeConstraint_ = CGSizeMake(-1, -1);
+            lastPreferredSize_ = CGSizeMake(-1, -1);
+            lastPreferredSizeConstraint_ = CGSizeMake(-1, -1);
         }
         return;
     }
@@ -245,13 +275,13 @@ static int ObserverContext;
     }
 
     size = [self constraintSize:size];
-    if ((size.width != lastPrefferedSizeConstraint_.width ||
-        size.height != lastPrefferedSizeConstraint_.height) &&
-        (size.width != lastPrefferedSize_.width || size.height != lastPrefferedSize_.height)) {
-        lastPrefferedSizeConstraint_ = size;
-        lastPrefferedSize_ = [view_ preferredSizeThatFits:size];
+    if ((size.width != lastPreferredSizeConstraint_.width ||
+        size.height != lastPreferredSizeConstraint_.height) &&
+        (size.width != lastPreferredSize_.width || size.height != lastPreferredSize_.height)) {
+        lastPreferredSizeConstraint_ = size;
+        lastPreferredSize_ = [view_ preferredSizeThatFits:size];
     }
-    size = [self constraintSize:lastPrefferedSize_];
+    size = [self constraintSize:lastPreferredSize_];
     if (size.width != CGFLOAT_MAX) {
         size.width += margin.left + margin.right;
     }

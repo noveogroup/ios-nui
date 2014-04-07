@@ -9,7 +9,19 @@
 			<string>NUIViewController</string>
 			<key>title</key>
 			<string>Simple VC</string>
+        </dict>
+        <dict>
+            <key>class</key>
+            <string>CellLayoutViewController</string>
+            <key>title</key>
+            <string>Cell Layouts</string>
 		</dict>
+        <dict>
+            <key>class</key>
+            <string>StackLayoutViewController</string>
+            <key>title</key>
+            <string>Stack Layouts</string>
+        </dict>
 	</array>
 </dict>
 </plist>

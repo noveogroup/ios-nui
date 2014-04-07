@@ -23,6 +23,15 @@
     return self;
 }
 
+- (id)copyWithZone:(NSZone *)zone
+{
+    NUICellLayoutItem *copy = [super copyWithZone:zone];
+    if (copy) {
+        copy.cellRange = cellRange_;
+    }
+    return copy;
+}
+
 - (void)setCellRange:(NSRange)cellRange
 {
     cellRange_ = cellRange;

@@ -19,6 +19,10 @@
 		BDFBE93F15B3E3A500A7822C /* nui.nui in Resources */ = {isa = PBXBuildFile; fileRef = BDFBE93D15B3E3A500A7822C /* nui.nui */; };
 		BDFBE94015B3E3A500A7822C /* styles.nui in Resources */ = {isa = PBXBuildFile; fileRef = BDFBE93E15B3E3A500A7822C /* styles.nui */; };
 		BDFBE94215B3E48A00A7822C /* ViewControllers.plist in Resources */ = {isa = PBXBuildFile; fileRef = BDFBE94115B3E48A00A7822C /* ViewControllers.plist */; };
+		CD6B0619E48D72D349C424E7 /* separator.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6B02E379C9383834A27684 /* separator.png */; };
+		CD6B07416B01885A0C98FB2B /* photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD6B004556D238ABC4F8635A /* photo.jpg */; };
+		CD6B0CD89F5C2FC76F4E06ED /* StackLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6B0C194A120E4314221A5B /* StackLayoutViewController.m */; };
+		CD6B0F2217C9294DEF51A80A /* CellLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6B0AB4CB4EB3509B563AF0 /* CellLayoutViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,12 @@
 		BDFBE93D15B3E3A500A7822C /* nui.nui */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = nui.nui; sourceTree = "<group>"; };
 		BDFBE93E15B3E3A500A7822C /* styles.nui */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = styles.nui; sourceTree = "<group>"; };
 		BDFBE94115B3E48A00A7822C /* ViewControllers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ViewControllers.plist; sourceTree = "<group>"; };
+		CD6B004556D238ABC4F8635A /* photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo.jpg; sourceTree = "<group>"; };
+		CD6B02E379C9383834A27684 /* separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = separator.png; sourceTree = "<group>"; };
+		CD6B08D5672C6EB058B56264 /* CellLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellLayoutViewController.h; sourceTree = "<group>"; };
+		CD6B0A71BA88465382B3A818 /* StackLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackLayoutViewController.h; sourceTree = "<group>"; };
+		CD6B0AB4CB4EB3509B563AF0 /* CellLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellLayoutViewController.m; sourceTree = "<group>"; };
+		CD6B0C194A120E4314221A5B /* StackLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackLayoutViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +106,10 @@
 				BDFBE91915B3E21F00A7822C /* MasterViewController.h */,
 				BDFBE91A15B3E21F00A7822C /* MasterViewController.m */,
 				BDFBE90E15B3E21F00A7822C /* Supporting Files */,
+				CD6B0AB4CB4EB3509B563AF0 /* CellLayoutViewController.m */,
+				CD6B08D5672C6EB058B56264 /* CellLayoutViewController.h */,
+				CD6B0C194A120E4314221A5B /* StackLayoutViewController.m */,
+				CD6B0A71BA88465382B3A818 /* StackLayoutViewController.h */,
 			);
 			path = NUIDemo;
 			sourceTree = "<group>";
@@ -117,6 +131,8 @@
 				BDFBE93D15B3E3A500A7822C /* nui.nui */,
 				BDFBE93E15B3E3A500A7822C /* styles.nui */,
 				BDFBE94115B3E48A00A7822C /* ViewControllers.plist */,
+				CD6B02E379C9383834A27684 /* separator.png */,
+				CD6B004556D238ABC4F8635A /* photo.jpg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -175,6 +191,8 @@
 				BDFBE93F15B3E3A500A7822C /* nui.nui in Resources */,
 				BDFBE94015B3E3A500A7822C /* styles.nui in Resources */,
 				BDFBE94215B3E48A00A7822C /* ViewControllers.plist in Resources */,
+				CD6B0619E48D72D349C424E7 /* separator.png in Resources */,
+				CD6B07416B01885A0C98FB2B /* photo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +207,8 @@
 				BDFBE91815B3E21F00A7822C /* AppDelegate.m in Sources */,
 				BDFBE91B15B3E21F00A7822C /* MasterViewController.m in Sources */,
 				BDFBE93615B3E34300A7822C /* NUIViewController.m in Sources */,
+				CD6B0F2217C9294DEF51A80A /* CellLayoutViewController.m in Sources */,
+				CD6B0CD89F5C2FC76F4E06ED /* StackLayoutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +289,7 @@
 		BDFBE92815B3E21F00A7822C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NUIDemo/NUIDemo-Prefix.pch";
 				INFOPLIST_FILE = "NUIDemo/NUIDemo-Info.plist";
@@ -286,6 +307,7 @@
 		BDFBE92915B3E21F00A7822C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NUIDemo/NUIDemo-Prefix.pch";
 				INFOPLIST_FILE = "NUIDemo/NUIDemo-Info.plist";

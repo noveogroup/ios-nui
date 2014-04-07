@@ -8,48 +8,48 @@
 
 /* Begin PBXBuildFile section */
 		BD1505EB15CF98390096EB13 /* libNUIKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1505EA15CF98390096EB13 /* libNUIKit.a */; };
+		BD71D6E518F26AAF0062436F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD71D6E218F26AAF0062436F /* InfoPlist.strings */; };
+		BD71D6F418F26AEC0062436F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD71D6E918F26AEC0062436F /* AppDelegate.m */; };
+		BD71D6F518F26AEC0062436F /* CellLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD71D6EB18F26AEC0062436F /* CellLayoutViewController.m */; };
+		BD71D6F618F26AEC0062436F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BD71D6EC18F26AEC0062436F /* main.m */; };
+		BD71D6F718F26AEC0062436F /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD71D6EE18F26AEC0062436F /* MasterViewController.m */; };
+		BD71D6F818F26AEC0062436F /* NUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD71D6F118F26AEC0062436F /* NUIViewController.m */; };
+		BD71D6F918F26AEC0062436F /* StackLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD71D6F318F26AEC0062436F /* StackLayoutViewController.m */; };
 		BDFBE90815B3E21F00A7822C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDFBE90715B3E21F00A7822C /* UIKit.framework */; };
 		BDFBE90A15B3E21F00A7822C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDFBE90915B3E21F00A7822C /* Foundation.framework */; };
 		BDFBE90C15B3E21F00A7822C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDFBE90B15B3E21F00A7822C /* CoreGraphics.framework */; };
-		BDFBE91215B3E21F00A7822C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BDFBE91015B3E21F00A7822C /* InfoPlist.strings */; };
-		BDFBE91415B3E21F00A7822C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFBE91315B3E21F00A7822C /* main.m */; };
-		BDFBE91815B3E21F00A7822C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFBE91715B3E21F00A7822C /* AppDelegate.m */; };
-		BDFBE91B15B3E21F00A7822C /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFBE91A15B3E21F00A7822C /* MasterViewController.m */; };
-		BDFBE93615B3E34300A7822C /* NUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFBE93515B3E34300A7822C /* NUIViewController.m */; };
 		BDFBE93F15B3E3A500A7822C /* nui.nui in Resources */ = {isa = PBXBuildFile; fileRef = BDFBE93D15B3E3A500A7822C /* nui.nui */; };
 		BDFBE94015B3E3A500A7822C /* styles.nui in Resources */ = {isa = PBXBuildFile; fileRef = BDFBE93E15B3E3A500A7822C /* styles.nui */; };
 		BDFBE94215B3E48A00A7822C /* ViewControllers.plist in Resources */ = {isa = PBXBuildFile; fileRef = BDFBE94115B3E48A00A7822C /* ViewControllers.plist */; };
 		CD6B0619E48D72D349C424E7 /* separator.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6B02E379C9383834A27684 /* separator.png */; };
 		CD6B07416B01885A0C98FB2B /* photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD6B004556D238ABC4F8635A /* photo.jpg */; };
-		CD6B0CD89F5C2FC76F4E06ED /* StackLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6B0C194A120E4314221A5B /* StackLayoutViewController.m */; };
-		CD6B0F2217C9294DEF51A80A /* CellLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6B0AB4CB4EB3509B563AF0 /* CellLayoutViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BD1505EA15CF98390096EB13 /* libNUIKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNUIKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD71D6E318F26AAF0062436F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		BD71D6E418F26AAF0062436F /* NUIDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NUIDemo-Info.plist"; sourceTree = "<group>"; };
+		BD71D6E818F26AEC0062436F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BD71D6E918F26AEC0062436F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BD71D6EA18F26AEC0062436F /* CellLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellLayoutViewController.h; sourceTree = "<group>"; };
+		BD71D6EB18F26AEC0062436F /* CellLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellLayoutViewController.m; sourceTree = "<group>"; };
+		BD71D6EC18F26AEC0062436F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BD71D6ED18F26AEC0062436F /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		BD71D6EE18F26AEC0062436F /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		BD71D6EF18F26AEC0062436F /* NUIDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NUIDemo-Prefix.pch"; sourceTree = "<group>"; };
+		BD71D6F018F26AEC0062436F /* NUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIViewController.h; sourceTree = "<group>"; };
+		BD71D6F118F26AEC0062436F /* NUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIViewController.m; sourceTree = "<group>"; };
+		BD71D6F218F26AEC0062436F /* StackLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackLayoutViewController.h; sourceTree = "<group>"; };
+		BD71D6F318F26AEC0062436F /* StackLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackLayoutViewController.m; sourceTree = "<group>"; };
 		BDFBE90315B3E21F00A7822C /* NUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDFBE90715B3E21F00A7822C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BDFBE90915B3E21F00A7822C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BDFBE90B15B3E21F00A7822C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		BDFBE90F15B3E21F00A7822C /* NUIDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NUIDemo-Info.plist"; sourceTree = "<group>"; };
-		BDFBE91115B3E21F00A7822C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		BDFBE91315B3E21F00A7822C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BDFBE91515B3E21F00A7822C /* NUIDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NUIDemo-Prefix.pch"; sourceTree = "<group>"; };
-		BDFBE91615B3E21F00A7822C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		BDFBE91715B3E21F00A7822C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BDFBE91915B3E21F00A7822C /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		BDFBE91A15B3E21F00A7822C /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		BDFBE93415B3E34300A7822C /* NUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIViewController.h; sourceTree = "<group>"; };
-		BDFBE93515B3E34300A7822C /* NUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIViewController.m; sourceTree = "<group>"; };
 		BDFBE93D15B3E3A500A7822C /* nui.nui */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = nui.nui; sourceTree = "<group>"; };
 		BDFBE93E15B3E3A500A7822C /* styles.nui */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = styles.nui; sourceTree = "<group>"; };
 		BDFBE94115B3E48A00A7822C /* ViewControllers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ViewControllers.plist; sourceTree = "<group>"; };
 		CD6B004556D238ABC4F8635A /* photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo.jpg; sourceTree = "<group>"; };
 		CD6B02E379C9383834A27684 /* separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = separator.png; sourceTree = "<group>"; };
-		CD6B08D5672C6EB058B56264 /* CellLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellLayoutViewController.h; sourceTree = "<group>"; };
-		CD6B0A71BA88465382B3A818 /* StackLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackLayoutViewController.h; sourceTree = "<group>"; };
-		CD6B0AB4CB4EB3509B563AF0 /* CellLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellLayoutViewController.m; sourceTree = "<group>"; };
-		CD6B0C194A120E4314221A5B /* StackLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackLayoutViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,11 +67,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD71D6E118F26AAF0062436F /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				BD71D6E218F26AAF0062436F /* InfoPlist.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		BD71D6E718F26AEC0062436F /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				BD71D6E818F26AEC0062436F /* AppDelegate.h */,
+				BD71D6E918F26AEC0062436F /* AppDelegate.m */,
+				BD71D6EA18F26AEC0062436F /* CellLayoutViewController.h */,
+				BD71D6EB18F26AEC0062436F /* CellLayoutViewController.m */,
+				BD71D6EC18F26AEC0062436F /* main.m */,
+				BD71D6ED18F26AEC0062436F /* MasterViewController.h */,
+				BD71D6EE18F26AEC0062436F /* MasterViewController.m */,
+				BD71D6EF18F26AEC0062436F /* NUIDemo-Prefix.pch */,
+				BD71D6F018F26AEC0062436F /* NUIViewController.h */,
+				BD71D6F118F26AEC0062436F /* NUIViewController.m */,
+				BD71D6F218F26AEC0062436F /* StackLayoutViewController.h */,
+				BD71D6F318F26AEC0062436F /* StackLayoutViewController.m */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
 		BDFBE8F815B3E21F00A7822C = {
 			isa = PBXGroup;
 			children = (
+				BD71D6E718F26AEC0062436F /* Internal */,
 				BDFBE93C15B3E3A500A7822C /* Resources */,
-				BDFBE90D15B3E21F00A7822C /* NUIDemo */,
 				BDFBE90615B3E21F00A7822C /* Frameworks */,
 				BDFBE90415B3E21F00A7822C /* Products */,
 			);
@@ -96,38 +123,11 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BDFBE90D15B3E21F00A7822C /* NUIDemo */ = {
-			isa = PBXGroup;
-			children = (
-				BDFBE93415B3E34300A7822C /* NUIViewController.h */,
-				BDFBE93515B3E34300A7822C /* NUIViewController.m */,
-				BDFBE91615B3E21F00A7822C /* AppDelegate.h */,
-				BDFBE91715B3E21F00A7822C /* AppDelegate.m */,
-				BDFBE91915B3E21F00A7822C /* MasterViewController.h */,
-				BDFBE91A15B3E21F00A7822C /* MasterViewController.m */,
-				BDFBE90E15B3E21F00A7822C /* Supporting Files */,
-				CD6B0AB4CB4EB3509B563AF0 /* CellLayoutViewController.m */,
-				CD6B08D5672C6EB058B56264 /* CellLayoutViewController.h */,
-				CD6B0C194A120E4314221A5B /* StackLayoutViewController.m */,
-				CD6B0A71BA88465382B3A818 /* StackLayoutViewController.h */,
-			);
-			path = NUIDemo;
-			sourceTree = "<group>";
-		};
-		BDFBE90E15B3E21F00A7822C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				BDFBE90F15B3E21F00A7822C /* NUIDemo-Info.plist */,
-				BDFBE91015B3E21F00A7822C /* InfoPlist.strings */,
-				BDFBE91315B3E21F00A7822C /* main.m */,
-				BDFBE91515B3E21F00A7822C /* NUIDemo-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		BDFBE93C15B3E3A500A7822C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BD71D6E118F26AAF0062436F /* en.lproj */,
+				BD71D6E418F26AAF0062436F /* NUIDemo-Info.plist */,
 				BDFBE93D15B3E3A500A7822C /* nui.nui */,
 				BDFBE93E15B3E3A500A7822C /* styles.nui */,
 				BDFBE94115B3E48A00A7822C /* ViewControllers.plist */,
@@ -187,8 +187,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDFBE91215B3E21F00A7822C /* InfoPlist.strings in Resources */,
 				BDFBE93F15B3E3A500A7822C /* nui.nui in Resources */,
+				BD71D6E518F26AAF0062436F /* InfoPlist.strings in Resources */,
 				BDFBE94015B3E3A500A7822C /* styles.nui in Resources */,
 				BDFBE94215B3E48A00A7822C /* ViewControllers.plist in Resources */,
 				CD6B0619E48D72D349C424E7 /* separator.png in Resources */,
@@ -203,22 +203,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDFBE91415B3E21F00A7822C /* main.m in Sources */,
-				BDFBE91815B3E21F00A7822C /* AppDelegate.m in Sources */,
-				BDFBE91B15B3E21F00A7822C /* MasterViewController.m in Sources */,
-				BDFBE93615B3E34300A7822C /* NUIViewController.m in Sources */,
-				CD6B0F2217C9294DEF51A80A /* CellLayoutViewController.m in Sources */,
-				CD6B0CD89F5C2FC76F4E06ED /* StackLayoutViewController.m in Sources */,
+				BD71D6F818F26AEC0062436F /* NUIViewController.m in Sources */,
+				BD71D6F918F26AEC0062436F /* StackLayoutViewController.m in Sources */,
+				BD71D6F718F26AEC0062436F /* MasterViewController.m in Sources */,
+				BD71D6F518F26AEC0062436F /* CellLayoutViewController.m in Sources */,
+				BD71D6F618F26AEC0062436F /* main.m in Sources */,
+				BD71D6F418F26AEC0062436F /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BDFBE91015B3E21F00A7822C /* InfoPlist.strings */ = {
+		BD71D6E218F26AAF0062436F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BDFBE91115B3E21F00A7822C /* en */,
+				BD71D6E318F26AAF0062436F /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -291,8 +291,8 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NUIDemo/NUIDemo-Prefix.pch";
-				INFOPLIST_FILE = "NUIDemo/NUIDemo-Info.plist";
+				GCC_PREFIX_HEADER = "Internal/NUIDemo-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/NUIDemo-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -309,8 +309,8 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NUIDemo/NUIDemo-Prefix.pch";
-				INFOPLIST_FILE = "NUIDemo/NUIDemo-Info.plist";
+				GCC_PREFIX_HEADER = "Internal/NUIDemo-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/NUIDemo-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
